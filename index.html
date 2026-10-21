@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Invitaciones Digitales ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #1e1b4b, #090d16 70%);
+      color: #f8fafc;
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 18px 48px;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 12px 8px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(236, 72, 153, 0.18);
+      border: 1px solid rgba(236, 72, 153, 0.5);
+      color: #f472b6;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+    .card.featured-pink {
+      border-color: rgba(255, 42, 133, 0.55);
+      background: linear-gradient(145deg, rgba(45, 12, 68, 0.8), rgba(15, 23, 42, 0.85));
+    }
+    .card.featured-blue {
+      border-color: rgba(94, 163, 242, 0.6);
+      background: linear-gradient(145deg, rgba(18, 53, 110, 0.8), rgba(15, 23, 42, 0.85));
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .price-pill {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+    .featured-pink .price-pill {
+      background: rgba(255, 42, 133, 0.25);
+      color: #ff85c2;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: #fff;
+      margin-top: 4px;
+      transition: transform 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-demo:active { transform: scale(0.97); }
+    .btn-pink {
+      background: linear-gradient(135deg, #ff2a85, #b537f2);
+      box-shadow: 0 0 20px rgba(255, 42, 133, 0.45);
+    }
+    .btn-blue {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.45);
+    }
+    .other-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tier-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+    .tier-price {
+      font-weight: 800;
+      color: #f472b6;
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <span class="badge">✨ Catálogo Oficial ✨</span>
+      <h1>Invitaciones Digitales</h1>
+      <p class="subtitle">Toca cualquiera de nuestras muestras interactivas para ver cómo la recibirán tus invitados en su celular.</p>
+    </header>
+
+    <!-- Muestra 1: Paquete $250 -->
+    <div class="card featured-pink">
+      <div class="card-top">
+        <span class="card-title">🎤 Invitación Web + Video Animado</span>
+        <span class="price-pill">$250 MXN</span>
+      </div>
+      <p class="card-desc">
+        Ideal para fiestas infantiles y temáticas. Incluye tu video animado personalizado con sonido, cuenta regresiva, detalles del evento y botones directos a Google Maps y confirmación por WhatsApp.
+      </p>
+      <a href="/Invitations/brianna/" onclick="navegarMuestra('brianna'); return false;" class="btn-demo btn-pink">
+        ▶️ Ver Muestra en Vivo (Cumpleaños Brianna)
+      </a>
+    </div>
+
+    <!-- Muestra 2: Paquete $300 -->
+    <div class="card featured-blue">
+      <div class="card-top">
+        <span class="card-title">👑 Invitación Web Formal Interactiva</span>
+        <span class="price-pill">$300 MXN</span>
+      </div>
+      <p class="card-desc">
+        Ideal para XV Años, Bodas y Bautizos. Incluye sobre interactivo 3D, música de fondo con disco giratorio, ubicaciones de Misa y Salón, código de vestimenta, lluvia de sobres y postal RSVP.
+      </p>
+      <a href="/Invitations/xv-ximena/" onclick="navegarMuestra('xv-ximena'); return false;" class="btn-demo btn-blue">
+        ✉️ Ver Muestra en Vivo (XV Años Ximena)
+      </a>
+    </div>
+
+    <!-- Otros paquetes -->
+    <div class="card">
+      <span class="card-title">📋 Otros Paquetes Disponibles</span>
+      <div class="other-tiers">
+        <div class="tier-row">
+          <span>🖼️ <strong>Imagen Personalizada</strong> (JPG para WhatsApp)</span>
+          <span class="tier-price">$50 MXN</span>
+        </div>
+        <div class="tier-row">
+          <span>📄 <strong>Imagen + Botones Interactivos</strong> (PDF con Ubicación y WhatsApp)</span>
+          <span class="tier-price">$100 MXN</span>
+        </div>
+        <div class="tier-row">
+          <span>🎬 <strong>Video Animado Temático</strong> (MP4 directo)</span>
+          <span class="tier-price">$200 MXN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navegarMuestra(slug) {
+      if (window.location.hostname.includes('github.io')) {
+        // Enlace exacto para GitHub Pages sin importar si estás en /catalogo o /
+        window.location.href = '/Invitations/' + slug + '/';
+      } else {
+        // Si lo abres en tu computadora de forma local
+        const path = window.location.pathname;
+        if (path.includes('/catalogo/')) {
+          window.location.href = '../' + slug + '/index.html';
+        } else {
+          window.location.href = './' + slug + '/index.html';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
