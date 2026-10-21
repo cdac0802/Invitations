@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mis XV Años • Ximena ✨💙</title>
+
+  <!-- Tipografías Editoriales y Caligráficas (Estilo TikTok @whimsykitt pero en Blanco y Azul Real) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pearl-white: #f8fbff;
+      --paper-cream: #f1f6fd;
+      --royal-blue: #12356e;
+      --navy-deep: #0a1f44;
+      --sky-blue: #5ea3f2;
+      --ice-blue: #d6e8ff;
+      --silver-glow: #cbd5e1;
+      --text-dark: #102a56;
+      --text-muted: #4a6691;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #07152e;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(94, 163, 242, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(18, 53, 110, 0.45) 0%, transparent 50%);
+      color: var(--text-dark);
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* Marco móvil centrado en PC y pantalla completa en celular */
+    .invitation-wrapper {
+      width: 100%;
+      max-width: 470px;
+      min-height: 100dvh;
+      background: var(--pearl-white);
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.65);
+      overflow: hidden;
+    }
+
+    /* =====================================================
+       PANTALLA 1: EL SOBRE INTERACTIVO (Inspirado en TikTok)
+       ===================================================== */
+    .envelope-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background:
+        radial-gradient(circle at 50% 30%, #ffffff 0%, #e6f0ff 65%, #cce0ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      transition: opacity 0.85s ease, visibility 0.85s ease, transform 0.85s ease;
+    }
+
+    .envelope-screen.opened {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.06);
+      pointer-events: none;
+    }
+
+    .envelope-pretitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--royal-blue);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .envelope-sub {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    /* Contenedor del sobre 3D */
+    .envelope-stage {
+      position: relative;
+      width: 310px;
+      height: 215px;
+      cursor: pointer;
+      perspective: 1000px;
+      transform: rotate(-2deg);
+      transition: transform 0.4s ease;
+      margin-bottom: 28px;
+    }
+
+    .envelope-stage:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    /* Cuerpo del sobre Azul Imperial */
+    .envelope-body {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1a478f, #0d2754);
+      border-radius: 10px;
+      box-shadow:
+        0 20px 40px rgba(10, 31, 68, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+      overflow: hidden;
+    }
+
+    /* Tarjeta blanca interior que asoma al abrirse */
+    .envelope-letter {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 14px;
+      bottom: 14px;
+      background: #ffffff;
+      border: 1px solid #bfd8ff;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      z-index: 2;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .envelope-letter span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--royal-blue);
+    }
+
+    .envelope-letter small {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Pliegues laterales e inferior del sobre */
+    .envelope-pocket {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background:
+        linear-gradient(33deg, #103166 50%, transparent 50.5%) 0 0 / 50.5% 100% no-repeat,
+        linear-gradient(-33deg, #143a78 50%, transparent 50.5%) 100% 0 / 50.5% 100% no-repeat,
+        linear-gradient(0deg, #0e2a59 0%, #174287 100%) 0 100% / 100% 58% no-repeat;
+      clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+    }
+
+    /* Solapa superior del sobre (se abre en 3D) */
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 62%;
+      background: linear-gradient(180deg, #2155a8, #12356e);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s;
+      z-index: 4;
+      filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.28));
+    }
+
+    /* Sello de cera plateado/azul en el centro */
+    .wax-seal {
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #f8fafc, #94a3b8 65%, #64748b 100%);
+      border: 2px solid #e2e8f0;
+      box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.4),
+        0 0 0 4px rgba(255, 255, 255, 0.15);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--royal-blue);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    /* Stickers decorativos en las esquinas del sobre (como en el TikTok) */
+    .envelope-sticker-top {
+      position: absolute;
+      top: -22px;
+      right: -18px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #bae6fd 50%, #38bdf8 85%, #0284c7);
+      box-shadow: 0 6px 16px rgba(18, 53, 110, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      z-index: 6;
+      animation: floatSlow 3s infinite ease-in-out;
+    }
+
+    .envelope-sticker-bottom {
+      position: absolute;
+      bottom: -16px;
+      left: -18px;
+      font-size: 2.3rem;
+      z-index: 6;
+      filter: drop-shadow(0 6px 10px rgba(18, 53, 110, 0.3));
+      animation: floatSlow 3.5s infinite ease-in-out reverse;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(5deg); }
+    }
+
+    /* Estado cuando el usuario hace clic en el sobre */
+    .envelope-stage.opening .envelope-flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+
+    .envelope-stage.opening .wax-seal {
+      transform: translate(-50%, -50%) scale(0.2);
+      opacity: 0;
+    }
+
+    .envelope-stage.opening .envelope-letter {
+      transform: translateY(-65px);
+    }
+
+    .click-envelope-cta {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--royal-blue);
+      text-transform: uppercase;
+      border-bottom: 1.5px solid var(--royal-blue);
+      padding-bottom: 3px;
+      cursor: pointer;
+      animation: pulseText 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.04); }
+    }
+
+    /* =====================================================
+       SECCIÓN HERO: FONDO BLANCO PERLA Y AZUL REAL
+       ===================================================== */
+    .hero-section {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 20%, #ffffff 0%, #edf4ff 75%, #dceaff 100%);
+      padding: 46px 24px 70px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Esferas / Destellos colgantes arriba (como las bolas disco del TikTok pero en plata/azul) */
+    .hanging-decor {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 10px;
+      margin-top: -46px;
+      margin-bottom: 18px;
+      pointer-events: none;
+    }
+
+    .ornament {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ornament-line {
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--royal-blue), rgba(18, 53, 110, 0.2));
+    }
+
+    .ornament-line.short { height: 34px; }
+    .ornament-line.medium { height: 56px; }
+    .ornament-line.long { height: 44px; }
+
+    .ornament-ball {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, #ffffff 0%, #dbeafe 35%, #60a5fa 70%, #1e3a8a 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      box-shadow:
+        0 6px 18px rgba(18, 53, 110, 0.22),
+        0 0 15px rgba(94, 163, 242, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+    }
+
+    .ornament-ball.large {
+      width: 64px;
+      height: 64px;
+      font-size: 1.75rem;
+    }
+
+    /* Encabezado con líneas laterales ("You are invited to" en el TikTok) */
+    .invited-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .invited-divider::before,
+    .invited-divider::after {
+      content: "";
+      height: 1px;
+      width: 48px;
+      background: var(--royal-blue);
+      opacity: 0.45;
+    }
+
+    .invited-divider span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--royal-blue);
+      letter-spacing: 1px;
+    }
+
+    /* Nombre Caligráfico Grande ("Ximena's") */
+    .quince-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.8rem;
+      line-height: 1.05;
+      color: var(--royal-blue);
+      text-shadow: 2px 4px 12px rgba(18, 53, 110, 0.16);
+      margin: 4px 0;
+    }
+
+    .quince-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+      margin-bottom: 6px;
+    }
+
+    /* padres / bendición */
+    .parents-block {
+      margin: 14px auto 18px;
+      max-width: 340px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(18, 53, 110, 0.15);
+      border-radius: 16px;
+      padding: 12px 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      line-height: 1.45;
+    }
+
+    .parents-label {
+      font-size: 0.78rem;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sky-blue);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Número grande 15 / XV (como el "19" del TikTok) */
+    .big-age {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--royal-blue);
+      letter-spacing: -2px;
+      margin: 6px 0 14px;
+      text-shadow: 0 6px 18px rgba(18, 53, 110, 0.15);
+    }
+
+    /* Bloque de Fecha Editorial: SÁBADO | 14 | NOVIEMBRE 2026 */
+    .editorial-date {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 22px;
+      border-top: 1px solid rgba(18, 53, 110, 0.25);
+      border-bottom: 1px solid rgba(18, 53, 110, 0.25);
+      margin-bottom: 18px;
+    }
+
+    .editorial-date .day-name,
+    .editorial-date .month-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+    }
+
+    .editorial-date .day-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      padding: 0 14px;
+      border-left: 1.5px solid var(--royal-blue);
+      border-right: 1.5px solid var(--royal-blue);
+      line-height: 1;
+    }
+
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.18rem;
+      color: var(--text-muted);
+      max-width: 310px;
+      margin: 0 auto 22px;
+      line-height: 1.4;
+    }
+
+    /* Contador Regresivo Blanco/Azul */
+    .countdown-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    .cd-card {
+      background: #ffffff;
+      border: 1px solid rgba(18, 53, 110, 0.2);
+      border-radius: 12px;
+      padding: 10px 4px;
+      box-shadow: 0 4px 12px rgba(18, 53, 110, 0.08);
+    }
+
+    .cd-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      display: block;
+    }
+
+    .cd-lbl {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================
+       DISCO DE VINILO MUSICAL (Igual al del TikTok)
+       ===================================================== */
+    .vinyl-widget {
+      position: relative;
+      margin: 22px auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(18, 53, 110, 0.25);
+      padding: 8px 18px 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(18, 53, 110, 0.14);
+      transition: transform 0.2s ease;
+    }
+
+    .vinyl-widget:active {
+      transform: scale(0.95);
+    }
+
+    .vinyl-disc {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(circle at 50% 50%, #0f172a 0px, #0f172a 2px, #1e293b 3px, #0f172a 4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .vinyl-disc.spinning {
+      animation: spinVinyl 4s linear infinite;
+    }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .vinyl-center {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.65rem;
+    }
+
+    .vinyl-info {
+      text-align: left;
+    }
+
+    .vinyl-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      display: block;
+    }
+
+    .vinyl-hint {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================
+       TRANSICIÓN DE ONDA Y SECCIÓN AZUL REAL PROFUNDO
+       ===================================================== */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 46px;
+      margin-top: -45px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .blue-section {
+      background: linear-gradient(180deg, var(--royal-blue) 0%, var(--navy-deep) 100%);
+      color: #ffffff;
+      padding: 20px 24px 55px;
+      position: relative;
+    }
+
+    /* Resumen superior (Hora, Lugar, Dress Code como en el TikTok) */
+    .quick-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 280px;
+      margin: 0 auto 28px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 16px 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .spec-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+    }
+
+    .spec-icon {
+      font-size: 1.15rem;
+      width: 26px;
+      text-align: center;
+    }
+
+    /* Tarjeta de Lugar con Ilustración Arquitectónica (como en el TikTok) */
+    .venue-showcase {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .venue-illustration {
+      width: 100%;
+      max-width: 310px;
+      margin: 0 auto 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 20px 16px 14px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .venue-illustration svg {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      stroke: #ffffff;
+      fill: none;
+    }
+
+    .venue-type-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--ice-blue);
+      background: rgba(94, 163, 242, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    .venue-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .venue-address {
+      font-size: 0.88rem;
+      color: var(--ice-blue);
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 26px;
+      border: 1.5px solid #ffffff;
+      border-radius: 6px;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-outline-white:active {
+      transform: scale(0.96);
+    }
+
+    /* Detalles Importantes / Código de Vestimenta y Lluvia de Sobres */
+    .details-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin-bottom: 36px;
+    }
+
+    .details-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 6px;
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #e2eeff;
+      line-height: 1.45;
+    }
+
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    /* =====================================================
+       TARJETA POSTAL RSVP INCLINADA (Igual al final del TikTok)
+       ===================================================== */
+    .rsvp-card-wrapper {
+      padding: 10px 6px 20px;
+    }
+
+    .rsvp-postcard {
+      background: var(--pearl-white);
+      color: var(--text-dark);
+      border-radius: 14px;
+      padding: 6px;
+      transform: rotate(-1.5deg);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease;
+    }
+
+    .rsvp-postcard:focus-within {
+      transform: rotate(0deg);
+    }
+
+    .rsvp-inner-border {
+      border: 2px solid var(--royal-blue);
+      border-radius: 10px;
+      padding: 24px 20px;
+    }
+
+    .rsvp-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .rsvp-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    .rsvp-header p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .rsvp-field {
+      margin-bottom: 16px;
+    }
+
+    .rsvp-field label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 6px;
+    }
+
+    .rsvp-input,
+    .rsvp-select {
+      width: 100%;
+      padding: 11px 12px;
+      border: none;
+      border-bottom: 1.5px solid var(--royal-blue);
+      background: rgba(18, 53, 110, 0.04);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      outline: none;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .rsvp-options {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 8px;
+    }
+
+    .rsvp-choice-btn {
+      width: 100%;
+      padding: 12px 14px;
+      background: #ffffff;
+      border: 1.5px solid rgba(18, 53, 110, 0.35);
+      border-radius: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .rsvp-choice-btn.selected {
+      background: var(--royal-blue);
+      color: #ffffff;
+      border-color: var(--royal-blue);
+      box-shadow: 0 4px 12px rgba(18, 53, 110, 0.25);
+    }
+
+    .btn-submit-rsvp {
+      width: 100%;
+      margin-top: 18px;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--royal-blue), var(--navy-deep));
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(18, 53, 110, 0.3);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-submit-rsvp:active {
+      transform: scale(0.97);
+    }
+
+    .rsvp-note {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .footer-signature {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(214, 232, 255, 0.65);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       PANTALLA 1: EL SOBRE INTERACTIVO (Se abre al tocarlo)
+       ========================================================= -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <p class="envelope-pretitle">¡Tienes una invitación especial!</p>
+    <p class="envelope-sub">Mis XV Años • Ximena</p>
+
+    <div class="envelope-stage" id="envelopeStage" role="button" tabindex="0" aria-label="Abrir sobre de invitación">
+      <!-- Sticker superior (Bola de cristal/espejos azul y plata) -->
+      <div class="envelope-sticker-top">🪩</div>
+
+      <!-- Cuerpo del sobre -->
+      <div class="envelope-body"></div>
+
+      <!-- Carta interior -->
+      <div class="envelope-letter">
+        <small>Mis XV Años</small>
+        <span id="letterName">Ximena</span>
+      </div>
+
+      <!-- Bolsillo frontal del sobre -->
+      <div class="envelope-pocket"></div>
+
+      <!-- Solapa que se abre en 3D -->
+      <div class="envelope-flap"></div>
+
+      <!-- Sello de cera plateado -->
+      <div class="wax-seal">XV</div>
+
+      <!-- Sticker inferior (Mariposa azul/plata) -->
+      <div class="envelope-sticker-bottom">🦋</div>
+    </div>
+
+    <div class="click-envelope-cta" id="clickEnvelopeBtn">
+      ✨ Toca el sobre para abrir ✨
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INVITACIÓN PRINCIPAL (Se revela al abrir el sobre)
+       ========================================================= -->
+  <main class="invitation-wrapper">
+
+    <!-- SECCIÓN BLANCO PERLA (HERO) -->
+    <section class="hero-section">
+      <!-- Esferas decorativas colgando (como el TikTok) -->
+      <div class="hanging-decor">
+        <div class="ornament">
+          <div class="ornament-line short"></div>
+          <div class="ornament-ball">🪩</div>
+        </div>
+        <div class="ornament">
+          <div class="ornament-line medium"></div>
+          <div class="ornament-ball large">👑</div>
+        </div>
+        <div class="ornament">
+          <div class="ornament-line long"></div>
+          <div class="ornament-ball">🦋</div>
+        </div>
+      </div>
+
+      <div class="invited-divider">
+        <span>Estás cordialmente invitado a celebrar</span>
+      </div>
+
+      <h1 class="quince-name" id="heroName">Ximena</h1>
+      <p class="quince-subtitle">Mis XV Años</p>
+
+      <!-- Bloque de Padres y Padrinos -->
+      <div class="parents-block">
+        <span class="parents-label">Con la bendición de mis padres</span>
+        <div id="parentsNames">Sr. Carlos Hernández &amp; Sra. Patricia Gómez</div>
+      </div>
+
+      <div class="big-age">15</div>
+
+      <!-- Fecha estilo editorial idéntica al TikTok -->
+      <div class="editorial-date">
+        <span class="day-name" id="dateDayName">SÁBADO</span>
+        <span class="day-num" id="dateDayNum">14</span>
+        <span class="month-year" id="dateMonthYear">NOVIEMBRE<br>2026</span>
+      </div>
+
+      <p class="hero-quote">
+        "Hay momentos inolvidables que se guardan en el corazón para siempre; por eso quiero compartir contigo esta noche mágica."
+      </p>
+
+      <!-- Contador Regresivo -->
+      <div class="countdown-row">
+        <div class="cd-card">
+          <span class="cd-val" id="cdDays">00</span>
+          <span class="cd-lbl">Días</span>
+        </div>
+        <div class="cd-card">
+          <span class="cd-val" id="cdHours">00</span>
+          <span class="cd-lbl">Horas</span>
+        </div>
+        <div class="cd-card">
+          <span class="cd-val" id="cdMins">00</span>
+          <span class="cd-lbl">Min</span>
+        </div>
+        <div class="cd-card">
+          <span class="cd-val" id="cdSecs">00</span>
+          <span class="cd-lbl">Seg</span>
+        </div>
+      </div>
+
+      <!-- Reproductor de Disco de Vinilo Giratorio (como en el TikTok) -->
+      <div class="vinyl-widget" id="vinylToggle" role="button" tabindex="0">
+        <div class="vinyl-disc" id="vinylDisc">
+          <div class="vinyl-center" id="vinylPlayIcon">⏸</div>
+        </div>
+        <div class="vinyl-info">
+          <span class="vinyl-title" id="vinylStatusText">Música de fondo: Activada</span>
+          <span class="vinyl-hint">Toca el disco para pausar o reproducir 🎶</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONDA DE TRANSICIÓN HACIA EL FONDO AZUL REAL -->
+    <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="#12356e" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+    </svg>
+
+    <!-- SECCIÓN AZUL REAL PROFUNDO (LUGAR, DETALLES Y RSVP) -->
+    <section class="blue-section">
+
+      <!-- Resumen rápido de hora, lugar y código de vestimenta -->
+      <div class="quick-specs">
+        <div class="spec-row">
+          <span class="spec-icon">⛪</span>
+          <span id="specCeremony">Misa: 6:00 PM • Parroquia San José</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-icon">🥂</span>
+          <span id="specReception">Recepción: 8:00 PM en adelante</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-icon">👗</span>
+          <span id="specDressCode">Código de Vestimenta: Formal</span>
+        </div>
+      </div>
+
+      <!-- Ceremonia Religiosa -->
+      <div class="venue-showcase">
+        <span class="venue-type-badge">⛪ Ceremonia Religiosa</span>
+        <h3 class="venue-title" id="churchName">Parroquia San José</h3>
+        <p class="venue-address" id="churchAddress">Av. Principal #120, Col. Centro • 6:00 PM</p>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-outline-white" id="btnChurchMap">
+          📍 Ver Mapa de la Iglesia
+        </a>
+      </div>
+
+      <!-- Recepción Principal con Ilustración Arquitectónica (igual al TikTok) -->
+      <div class="venue-showcase">
+        <div class="venue-illustration">
+          <!-- Ilustración estilo grabado clásico en trazos blancos -->
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 165 L270 165" stroke-width="2.5"/>
+            <path d="M50 165 L50 75 L150 25 L250 75 L250 165" stroke-width="2"/>
+            <path d="M40 75 L150 18 L260 75" stroke-width="2.5"/>
+            <rect x="75" y="90" width="28" height="35" stroke-width="1.5"/>
+            <rect x="197" y="90" width="28" height="35" stroke-width="1.5"/>
+            <path d="M128 165 L128 110 A22 22 0 0 1 172 110 L172 165" stroke-width="2"/>
+            <circle cx="150" cy="56" r="12" stroke-width="1.5"/>
+            <line x1="115" y1="75" x2="115" y2="165" stroke-width="1.5"/>
+            <line x1="185" y1="75" x2="185" y2="165" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <span class="venue-type-badge">🥂 Recepción &amp; Gran Festejo</span>
+        <h3 class="venue-title" id="venueName">Salón Imperial Azul</h3>
+        <p class="venue-address" id="venueAddress">Blvd. de los Eventos #450 • 8:00 PM</p>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-outline-white" id="btnVenueMap">
+          📍 Ver Mapa del Salón
+        </a>
+      </div>
+
+      <!-- Detalles del Evento / Reglas y Lluvia de Sobres -->
+      <div class="details-box">
+        <h3>Detalles Especiales</h3>
+        <ul class="rules-list">
+          <li>
+            <span>👗</span>
+            <span><strong>Código de Vestimenta:</strong> Formal / Etiqueta. <em>(El color azul cielo y azul rey se reservan exclusivamente para la Quinceañera).</em></span>
+          </li>
+          <li>
+            <span>✉️</span>
+            <span><strong>Sugerencia de Regalo:</strong> Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo habrá <strong>Lluvia de Sobres</strong> en la entrada.</span>
+          </li>
+          <li>
+            <span>📸</span>
+            <span><strong>Recuerdos:</strong> ¡Comparte tus fotos y videos de la fiesta y acompáñanos a bailar toda la noche! ✨</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TARJETA POSTAL RSVP INCLINADA (Inspirada en el cierre del TikTok) -->
+      <div class="rsvp-card-wrapper">
+        <div class="rsvp-postcard">
+          <div class="rsvp-inner-border">
+            <div class="rsvp-header">
+              <h2>RSVP</h2>
+              <p>Confirmación de Asistencia</p>
+            </div>
+
+            <div class="rsvp-field">
+              <label for="rsvpGuestName">Tu nombre o familia*</label>
+              <input
+                type="text"
+                id="rsvpGuestName"
+                class="rsvp-input"
+                placeholder="Ej. Familia Ramírez / Tíos López"
+              />
+            </div>
+
+            <div class="rsvp-field">
+              <label for="rsvpPasses">Personas confirmadas</label>
+              <select id="rsvpPasses" class="rsvp-select">
+                <option value="1 persona">1 persona</option>
+                <option value="2 personas" selected>2 personas</option>
+                <option value="3 personas">3 personas</option>
+                <option value="4 personas">4 personas</option>
+                <option value="Familia completa">Familia completa</option>
+              </select>
+            </div>
+
+            <div class="rsvp-field">
+              <label>¿Nos acompañas en esta noche mágica?*</label>
+              <div class="rsvp-options">
+                <button type="button" class="rsvp-choice-btn selected" id="choiceYes">
+                  <span>💙</span> ¡Claro que sí, no me lo perdería!
+                </button>
+                <button type="button" class="rsvp-choice-btn" id="choiceNo">
+                  <span>🤍</span> No podré asistir esta vez, ¡muchas felicidades!
+                </button>
+              </div>
+            </div>
+
+            <button type="button" class="btn-submit-rsvp" id="btnSendRsvp">
+              Confirmar por WhatsApp ✨
+            </button>
+
+            <p class="rsvp-note">
+              Al tocar confirmar se enviará tu respuesta directamente por WhatsApp.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-signature">
+        ✨ Invitación Web Interactiva • Paquete Formal \$300 ✨
+      </p>
+
+    </section>
+  </main>
+
+  <!-- Si el cliente quiere una canción MP3 específica, solo pon el archivo aquí en src="" -->
+  <audio id="bgAudio" loop preload="auto"></audio>
+
+  <!-- =========================================================
+       CONFIGURACIÓN RÁPIDA (Cambia estos datos para cada cliente)
+       ========================================================= -->
+  <script>
+    const CONFIG = {
+      quinceanera: "Ximena",
+      padres: "Sr. Carlos Hernández & Sra. Patricia Gómez",
+      diaSemana: "SÁBADO",
+      diaNumero: "14",
+      mesAnio: "NOVIEMBRE<br>2026",
+      fechaISO: "2026-11-14T20:00:00",
+
+      // Datos de Misa
+      nombreIglesia: "Parroquia San José",
+      direccionIglesia: "Av. Principal #120, Col. Centro • 6:00 PM",
+      mapaIglesiaUrl: "https://www.google.com/maps/search/?api=1&query=Parroquia+San+Jose",
+
+      // Datos del Salón
+      nombreSalon: "Salón Imperial Azul",
+      direccionSalon: "Blvd. de los Eventos #450 • 8:00 PM",
+      mapaSalonUrl: "https://www.google.com/maps/search/?api=1&query=Salon+Imperial",
+
+      // WhatsApp del cliente (52 + 10 dígitos)
+      telefonoWhatsapp: "5215500000000",
+
+      // Opcional: ruta a un archivo MP3 (ej. "cancion-xv.mp3").
+      // Si se deja vacío "", suena automáticamente una caja de música / vals cristalino integrado.
+      archivoMp3: ""
+    };
+
+    // Aplicar datos de CONFIG al HTML
+    document.getElementById('letterName').textContent = CONFIG.quinceanera;
+    document.getElementById('heroName').textContent = CONFIG.quinceanera;
+    document.getElementById('parentsNames').textContent = CONFIG.padres;
+    document.getElementById('dateDayName').textContent = CONFIG.diaSemana;
+    document.getElementById('dateDayNum').textContent = CONFIG.diaNumero;
+    document.getElementById('dateMonthYear').innerHTML = CONFIG.mesAnio;
+    document.getElementById('churchName').textContent = CONFIG.nombreIglesia;
+    document.getElementById('churchAddress').textContent = CONFIG.direccionIglesia;
+    document.getElementById('btnChurchMap').href = CONFIG.mapaIglesiaUrl;
+    document.getElementById('venueName').textContent = CONFIG.nombreSalon;
+    document.getElementById('venueAddress').textContent = CONFIG.direccionSalon;
+    document.getElementById('btnVenueMap').href = CONFIG.mapaSalonUrl;
+
+    // =========================================================
+    // MÚSICA DE FONDO (Soporta MP3 o Melodía de Vals Cristalino)
+    // =========================================================
+    const bgAudio = document.getElementById('bgAudio');
+    if (CONFIG.archivoMp3) {
+      bgAudio.src = CONFIG.archivoMp3;
+    }
+
+    let audioCtx = null;
+    let musicPlaying = false;
+    let melodyInterval = null;
+
+    // Melodía estilo caja de música / vals de XV años (por si aún no suben un MP3)
+    const waltzNotes = [523.25, 659.25, 783.99, 1046.50, 783.99, 659.25, 587.33, 698.46, 880.00, 1174.66, 880.00, 698.46];
+    let noteIndex = 0;
+
+    function playChimeNote(freq) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.4);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 1.45);
+    }
+
+    function startMusic() {
+      musicPlaying = true;
+      updateVinylUI();
+
+      if (CONFIG.archivoMp3) {
+        bgAudio.play().catch(() => {});
+        return;
+      }
+
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      if (!melodyInterval) {
+        playChimeNote(waltzNotes[noteIndex % waltzNotes.length]);
+        noteIndex++;
+        melodyInterval = setInterval(() => {
+          if (musicPlaying) {
+            playChimeNote(waltzNotes[noteIndex % waltzNotes.length]);
+            noteIndex++;
+          }
+        }, 550);
+      }
+    }
+
+    function toggleMusic() {
+      musicPlaying = !musicPlaying;
+      if (CONFIG.archivoMp3) {
+        if (musicPlaying) bgAudio.play();
+        else bgAudio.pause();
+      }
+      updateVinylUI();
+    }
+
+    function updateVinylUI() {
+      const vinylDisc = document.getElementById('vinylDisc');
+      const vinylPlayIcon = document.getElementById('vinylPlayIcon');
+      const vinylStatusText = document.getElementById('vinylStatusText');
+
+      if (musicPlaying) {
+        vinylDisc.classList.add('spinning');
+        vinylPlayIcon.textContent = '⏸';
+        vinylStatusText.textContent = 'Música de fondo: Activada';
+      } else {
+        vinylDisc.classList.remove('spinning');
+        vinylPlayIcon.textContent = '▶️';
+        vinylStatusText.textContent = 'Música en pausa (Toca para oír)';
+      }
+    }
+
+    // =========================================================
+    // ANIMACIÓN DE APERTURA DEL SOBRE
+    // =========================================================
+    const envelopeStage = document.getElementById('envelopeStage');
+    const clickEnvelopeBtn = document.getElementById('clickEnvelopeBtn');
+    const envelopeScreen = document.getElementById('envelopeScreen');
+
+    function openEnvelope() {
+      if (envelopeStage.classList.contains('opening')) return;
+      envelopeStage.classList.add('opening');
+      startMusic();
+
+      setTimeout(() => {
+        envelopeScreen.classList.add('opened');
+      }, 750);
+    }
+
+    envelopeStage.addEventListener('click', openEnvelope);
+    clickEnvelopeBtn.addEventListener('click', openEnvelope);
+    document.getElementById('vinylToggle').addEventListener('click', toggleMusic);
+
+    // =========================================================
+    // LÓGICA DEL FORMULARIO RSVP (Tarjeta Postal)
+    // =========================================================
+    let willAttend = true;
+    const choiceYes = document.getElementById('choiceYes');
+    const choiceNo = document.getElementById('choiceNo');
+
+    choiceYes.addEventListener('click', () => {
+      willAttend = true;
+      choiceYes.classList.add('selected');
+      choiceNo.classList.remove('selected');
+    });
+
+    choiceNo.addEventListener('click', () => {
+      willAttend = false;
+      choiceNo.classList.add('selected');
+      choiceYes.classList.remove('selected');
+    });
+
+    document.getElementById('btnSendRsvp').addEventListener('click', () => {
+      const guestName = document.getElementById('rsvpGuestName').value.trim() || 'Invitado Especial';
+      const passes = document.getElementById('rsvpPasses').value;
+
+      const mensaje = willAttend
+        ? `¡Hola! 💙✨ Soy *${guestName}* y confirmo con mucha alegría nuestra asistencia (${passes}) a los XV Años de *${CONFIG.quinceanera}*. ¡Muchas gracias por la invitación!`
+        : `¡Hola! 🤍 Soy *${guestName}*. Agradezco de corazón la invitación a los XV Años de *${CONFIG.quinceanera}*, pero en esta ocasión no podremos asistir. ¡Le deseamos una noche mágica! ✨`;
+
+      const url = `https://wa.me/${CONFIG.telefonoWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+
+    // =========================================================
+    // CONTADOR REGRESIVO
+    // =========================================================
+    function updateCountdown() {
+      const target = new Date(CONFIG.fechaISO).getTime();
+      const diff = target - Date.now();
+      if (diff <= 0) return;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cdDays').textContent = String(d).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(m).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(s).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
