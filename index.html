@@ -3,217 +3,875 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo de Invitaciones Digitales ✨</title>
+  <title>Nuestro Menú • Invitaciones Digitales Personalizadas ✨</title>
+
+  <!-- Tipografías elegantes idénticas a tu imagen -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-dark: #061124;
+      --bg-card: rgba(10, 24, 49, 0.88);
+      --card-border: rgba(56, 126, 219, 0.42);
+      --card-border-glow: rgba(72, 182, 255, 0.6);
+      --ice-blue: #6cd5ff;
+      --cyan-bright: #38bdf8;
+      --deep-blue: #0b3678;
+      --navy-ribbon: #114294;
+      --text-white: #ffffff;
+      --text-soft: #c8ddf7;
+      --gold-accent: #ffd166;
+      --whatsapp-green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
-      font-family: 'Outfit', sans-serif;
-      background: radial-gradient(circle at top, #1e1b4b, #090d16 70%);
-      color: #f8fafc;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      background-image:
+        radial-gradient(circle at 50% 10%, rgba(30, 85, 170, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 10% 45%, rgba(14, 52, 114, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 90% 75%, rgba(18, 65, 140, 0.35) 0%, transparent 55%),
+        linear-gradient(180deg, #050e1d 0%, #08162d 100%);
+      color: var(--text-white);
       min-height: 100dvh;
       display: flex;
       justify-content: center;
-      padding: 32px 18px 48px;
+      padding: 32px 14px 60px;
+      overflow-x: hidden;
     }
-    .container {
+
+    .menu-page {
       width: 100%;
-      max-width: 500px;
+      max-width: 980px;
       display: flex;
       flex-direction: column;
+      gap: 36px;
+      position: relative;
+    }
+
+    /* =========================================================
+       ENCABEZADO IDÉNTICO AL FLYER DE INSTAGRAM
+       ========================================================= */
+    .header-banner {
+      position: relative;
+      padding: 10px 10px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .top-left-tag {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      text-align: left;
+    }
+
+    .top-left-tag .tag-text {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #93c5fd;
+      display: block;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    .top-right-script {
+      position: absolute;
+      top: -4px;
+      right: 8px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.65rem;
+      color: #38bdf8;
+      line-height: 1.1;
+      text-align: right;
+      transform: rotate(-3deg);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+    }
+
+    .top-right-script span {
+      display: block;
+    }
+
+    .top-star {
+      font-size: 1.7rem;
+      color: var(--ice-blue);
+      margin-bottom: 4px;
+      animation: pulseStar 2.5s infinite ease-in-out;
+      text-shadow: 0 0 15px rgba(108, 213, 255, 0.8);
+    }
+
+    @keyframes pulseStar {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+
+    .main-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: 5px;
+      line-height: 1;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .main-title .menu-word {
+      display: block;
+      color: var(--ice-blue);
+      font-weight: 900;
+      background: linear-gradient(180deg, #dcf2ff 0%, #6cd5ff 70%, #2997ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 18px rgba(72, 182, 255, 0.45));
+    }
+
+    .subtitle-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .subtitle-divider::before,
+    .subtitle-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.5), transparent);
+    }
+
+    .subtitle-text {
+      font-size: clamp(0.68rem, 1.8vw, 0.85rem);
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       GRILLA DE PAQUETES (3 ARRIBA Y 2 ABAJO COMO EN EL FLYER)
+       ========================================================= */
+    .menu-grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-    .hero {
-      text-align: center;
-      padding: 12px 8px;
+
+    .menu-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 820px;
+      margin: 0 auto;
+      width: 100%;
     }
-    .badge {
-      display: inline-block;
-      background: rgba(236, 72, 153, 0.18);
-      border: 1px solid rgba(236, 72, 153, 0.5);
-      color: #f472b6;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+
+    /* Responsive en celulares */
+    @media (max-width: 850px) {
+      .menu-grid-top {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .menu-grid-bottom {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+      .top-left-tag {
+        position: static;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .top-right-script {
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+        transform: none;
+      }
+      .subtitle-divider {
+        flex-wrap: wrap;
+      }
     }
-    h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-    .card {
-      background: rgba(30, 41, 59, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 22px;
-      padding: 22px 20px;
+
+    /* =========================================================
+       TARJETA INDIVIDUAL DE PAQUETE
+       ========================================================= */
+    .menu-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 18px 20px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      position: relative;
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(18, 54, 120, 0.25) inset;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      backdrop-filter: blur(8px);
     }
-    .card.featured-pink {
-      border-color: rgba(255, 42, 133, 0.55);
-      background: linear-gradient(145deg, rgba(45, 12, 68, 0.8), rgba(15, 23, 42, 0.85));
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-border-glow);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(72, 182, 255, 0.35);
     }
-    .card.featured-blue {
-      border-color: rgba(94, 163, 242, 0.6);
-      background: linear-gradient(145deg, rgba(18, 53, 110, 0.8), rgba(15, 23, 42, 0.85));
-    }
-    .card-top {
+
+    /* Encabezado de la tarjeta: Número a la izquierda y Listón de Precio a la derecha */
+    .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      margin-bottom: 14px;
     }
-    .card-title {
-      font-size: 1.2rem;
+
+    .card-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
       font-weight: 700;
+      color: #93c5fd;
+      letter-spacing: 1px;
     }
-    .price-pill {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 5px 12px;
-      border-radius: 999px;
+
+    /* Listón de precio estilizado como el flyer */
+    .price-ribbon {
+      background: linear-gradient(135deg, #1d4ed8, #0e377e);
+      color: #ffffff;
+      padding: 6px 18px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      border-radius: 6px;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+      letter-spacing: 1px;
+    }
+
+    .price-ribbon.premium {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow:
+        0 4px 16px rgba(37, 99, 235, 0.5),
+        0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Título del paquete */
+    .package-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
       font-weight: 800;
-      font-size: 0.95rem;
-      color: #38bdf8;
-      white-space: nowrap;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
-    .featured-pink .price-pill {
-      background: rgba(255, 42, 133, 0.25);
-      color: #ff85c2;
+
+    .package-type {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #7dd3fc;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
     }
-    .card-desc {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      line-height: 1.45;
+
+    /* Mockup visual estilizado en CSS/SVG para representar celular/laptop */
+    .mockup-container {
+      width: 100%;
+      height: 155px;
+      background: radial-gradient(circle at 50% 40%, rgba(18, 54, 120, 0.5), rgba(4, 14, 30, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-    .btn-demo {
+
+    /* Estilo de celular en miniatura */
+    .mini-phone {
+      width: 80px;
+      height: 140px;
+      border: 2px solid #64748b;
+      border-radius: 12px;
+      background: #0b1a33;
+      padding: 6px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .mini-phone.cream-theme {
+      background: #fdfcf7;
+      color: #27272a;
+      border-color: #d4d4d8;
+    }
+
+    .mini-phone-text {
+      font-size: 0.45rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .mini-btn {
+      margin-top: 6px;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.38rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      width: 90%;
+    }
+
+    .mini-btn.location {
+      background: #1e3a8a;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-top: 2px;
+    }
+
+    .mini-play-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1.5px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin: 4px 0;
+      color: #fff;
+    }
+
+    /* Estilo de laptop en miniatura para el paquete $250 */
+    .mini-laptop {
+      width: 170px;
+      height: 110px;
+      border: 2px solid #94a3b8;
+      border-radius: 8px 8px 2px 2px;
+      background: #09172f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .mini-laptop::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      width: 200px;
+      height: 6px;
+      background: #64748b;
+      border-radius: 0 0 6px 6px;
+    }
+
+    /* Lista de beneficios con palomitas */
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .features-list li {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .check-icon {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 1.5px solid var(--cyan-bright);
+      color: var(--cyan-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Frases manuscritas cursivas abajo de cada tarjeta (como en el flyer) */
+    .card-cursive-note {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      color: #7dd3fc;
+      text-align: center;
+      margin-top: auto;
+      padding-top: 8px;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+    }
+
+    /* =========================================================
+       BOTONES DE ACCIÓN (Ver Muestra en Vivo y Pedir por WhatsApp)
+       ========================================================= */
+    .btn-action-primary {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 13px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.96rem;
-      color: #fff;
-      margin-top: 4px;
-      transition: transform 0.15s ease;
       cursor: pointer;
+      border: none;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
-    .btn-demo:active { transform: scale(0.97); }
-    .btn-pink {
+
+    .btn-action-primary:active {
+      transform: scale(0.97);
+    }
+
+    .btn-live-pink {
       background: linear-gradient(135deg, #ff2a85, #b537f2);
+      color: #fff;
       box-shadow: 0 0 20px rgba(255, 42, 133, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
-    .btn-blue {
+
+    .btn-live-blue {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.45);
+      color: #fff;
+      box-shadow: 0 0 22px rgba(37, 99, 235, 0.55);
+      border: 1px solid rgba(147, 197, 253, 0.5);
     }
-    .other-tiers {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+
+    .btn-whatsapp-order {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
-    .tier-row {
+
+    /* =========================================================
+       PIE DE PÁGINA IDÉNTICO AL FLYER (3 BENEFICIOS)
+       ========================================================= */
+    .footer-badges-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 14px;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.9rem;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 24px 20px;
+      background: rgba(10, 24, 49, 0.7);
+      border: 1px solid rgba(56, 126, 219, 0.35);
+      border-radius: 20px;
+      margin-top: 10px;
     }
-    .tier-price {
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .badge-icon {
+      font-size: 1.6rem;
+      color: #38bdf8;
+    }
+
+    .badge-content h4 {
+      font-size: 0.82rem;
       font-weight: 800;
-      color: #f472b6;
-      margin-left: 12px;
-      white-space: nowrap;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .badge-content p {
+      font-size: 0.72rem;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .footer-signature-script {
+      font-family: 'Caveat', cursive;
+      font-size: 1.7rem;
+      color: #60cdff;
+      text-align: right;
+      padding-right: 12px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <span class="badge">✨ Catálogo Oficial ✨</span>
-      <h1>Invitaciones Digitales</h1>
-      <p class="subtitle">Toca cualquiera de nuestras muestras interactivas para ver cómo la recibirán tus invitados en su celular.</p>
+
+  <div class="menu-page">
+
+    <!-- =========================================================
+         ENCABEZADO
+         ========================================================= -->
+    <header class="header-banner">
+      <div class="top-left-tag">
+        <span class="tag-text">Invitaciones Digitales</span>
+      </div>
+
+      <div class="top-right-script">
+        <span>Personalizadas</span>
+        <span>Creativas</span>
+        <span>Digitales</span>
+      </div>
+
+      <div class="top-star">✦</div>
+      <h1 class="main-title">
+        NUESTRO
+        <span class="menu-word">MENÚ</span>
+      </h1>
+
+      <div class="subtitle-divider">
+        <span class="subtitle-text">Ideas que hacen especiales tus momentos</span>
+      </div>
     </header>
 
-    <!-- Muestra 1: Paquete $250 -->
-    <div class="card featured-pink">
-      <div class="card-top">
-        <span class="card-title">🎤 Invitación Web + Video Animado</span>
-        <span class="price-pill">$250 MXN</span>
+    <!-- =========================================================
+         FILA SUPERIOR: PAQUETES 01, 02 Y 03
+         ========================================================= -->
+    <div class="menu-grid-top">
+
+      <!-- 01: INVITACIÓN NORMAL ($50) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">01</span>
+          <div class="price-ribbon">$50</div>
+        </div>
+
+        <h2 class="package-name">Invitación Normal</h2>
+        <span class="package-type">Personalizada</span>
+
+        <div class="mockup-container">
+          <div class="mini-phone cream-theme">
+            <span class="mini-phone-text">ESTÁS<br>INVITADO</span>
+            <div style="font-size:0.35rem; color:#71717a; margin-top:3px;">24 • MAYO • 2026</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (con tu temática, colores y estilo)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Imagen en alta calidad</strong> (formato digital JPG)</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Simple, bonita y especial</div>
+
+        <a href="https://wa.me/5215500000000?text=Hola,%20me%20interesa%20el%20paquete%20de%20$50%20(Invitaci%C3%B3n%20Normal)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
       </div>
-      <p class="card-desc">
-        Ideal para fiestas infantiles y temáticas. Incluye tu video animado personalizado con sonido, cuenta regresiva, detalles del evento y botones directos a Google Maps y confirmación por WhatsApp.
-      </p>
-      <a href="/Invitations/brianna/" onclick="navegarMuestra('brianna'); return false;" class="btn-demo btn-pink">
-        ▶️ Ver Muestra en Vivo (Cumpleaños Brianna)
-      </a>
+
+      <!-- 02: INVITACIÓN CON BOTONES ($100) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">02</span>
+          <div class="price-ribbon">$100</div>
+        </div>
+
+        <h2 class="package-name">Invitación Normal</h2>
+        <span class="package-type">Con Botones</span>
+
+        <div class="mockup-container">
+          <div class="mini-phone">
+            <span class="mini-phone-text" style="color:#93c5fd;">Estás<br>invitado</span>
+            <div class="mini-btn">Confirmar</div>
+            <div class="mini-btn location">Ubicación</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón de confirmar asistencia</strong> vía WhatsApp</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón para ver ubicación</strong> en Google Maps</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Todo en un solo clic</div>
+
+        <a href="https://wa.me/5215500000000?text=Hola,%20me%20interesa%20el%20paquete%20de%20$100%20(Con%20Botones%20Interactivos)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+      <!-- 03: INVITACIÓN DIGITAL ANIMADA ($200) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">03</span>
+          <div class="price-ribbon">$200</div>
+        </div>
+
+        <h2 class="package-name">Invitación Digital</h2>
+        <span class="package-type">Animada + Video</span>
+
+        <div class="mockup-container">
+          <div class="mini-phone" style="background: radial-gradient(circle, #3b0764, #0f172a);">
+            <span class="mini-phone-text" style="color:#f472b6;">Estás<br>invitado</span>
+            <div class="mini-play-icon">▶</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (con temática, colores y estilo)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Detalles del evento</strong> y de la temática</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Video animado</strong> (aprox. 20 seg con música y efectos)</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Una experiencia que se disfruta</div>
+
+        <a href="https://wa.me/5215500000000?text=Hola,%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
     </div>
 
-    <!-- Muestra 2: Paquete $300 -->
-    <div class="card featured-blue">
-      <div class="card-top">
-        <span class="card-title">👑 Invitación Web Formal Interactiva</span>
-        <span class="price-pill">$300 MXN</span>
+    <!-- =========================================================
+         FILA INFERIOR: PAQUETES 04 Y 05 (LAS WEBS CON DEMO EN VIVO)
+         ========================================================= -->
+    <div class="menu-grid-bottom">
+
+      <!-- 04: MINI PÁGINA WEB ($250) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">04</span>
+          <div class="price-ribbon premium">$250</div>
+        </div>
+
+        <h2 class="package-name">Invitación en</h2>
+        <span class="package-type">Mini Página Web</span>
+
+        <div class="mockup-container">
+          <div class="mini-laptop">
+            <span style="font-size:0.55rem; font-weight:700; color:#38bdf8; margin-bottom:4px;">Estás invitado</span>
+            <div style="display:flex; gap:4px; width:80%;">
+              <div class="mini-btn" style="font-size:0.32rem;">Confirmar</div>
+              <div class="mini-btn location" style="font-size:0.32rem;">Ubicación</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Detalles del evento</strong> y de la temática</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Video animado</strong> (integrado directamente en la página con sonido)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón de confirmar asistencia</strong> vía WhatsApp</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón para ver ubicación</strong> en Google Maps</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Todo en un solo lugar + video integrado</div>
+
+        <!-- Botón que abre la muestra en vivo de Brianna sin error 404 -->
+        <a href="/Invitations/brianna/" onclick="abrirMuestra('brianna'); return false;" class="btn-action-primary btn-live-pink">
+          ▶️ Ver Muestra en Vivo (Cumpleaños Brianna)
+        </a>
       </div>
-      <p class="card-desc">
-        Ideal para XV Años, Bodas y Bautizos. Incluye sobre interactivo 3D, música de fondo con disco giratorio, ubicaciones de Misa y Salón, código de vestimenta, lluvia de sobres y postal RSVP.
-      </p>
-      <a href="/Invitations/xv-ximena/" onclick="navegarMuestra('xv-ximena'); return false;" class="btn-demo btn-blue">
-        ✉️ Ver Muestra en Vivo (XV Años Ximena)
-      </a>
+
+      <!-- 05: PÁGINA WEB COMPLETA ($300) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">05</span>
+          <div class="price-ribbon premium">$300</div>
+        </div>
+
+        <h2 class="package-name">Invitación en</h2>
+        <span class="package-type">Página Web Interactiva</span>
+
+        <div class="mockup-container">
+          <div class="mini-phone" style="width:90px; height:145px; background:linear-gradient(180deg, #1e3a8a, #0a192f);">
+            <div style="font-size:0.4rem; color:#93c5fd; letter-spacing:1px;">Mis XV Años</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.68rem; color:#fff; font-weight:700;">Valeria</div>
+            <div class="mini-btn" style="margin-top:8px;">Confirmar</div>
+            <div class="mini-btn location">Ubicación</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (XV Años, Bodas, Bautizos)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugares)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Detalles del evento</strong> y de la temática</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Sobre 3D interactivo</strong> de apertura</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Música de fondo</strong> con reproductor de vinilo giratorio</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botones de ubicación</strong> (Misa y Salón)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Página web completa</strong> con código de vestimenta, lluvia de sobres y RSVP</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Tu invitación, como una página especial</div>
+
+        <!-- Botón que abre la muestra en vivo de Ximena sin error 404 -->
+        <a href="/Invitations/xv-ximena/" onclick="abrirMuestra('xv-ximena'); return false;" class="btn-action-primary btn-live-blue">
+          ✉️ Ver Muestra en Vivo (XV Años Ximena)
+        </a>
+      </div>
+
     </div>
 
-    <!-- Otros paquetes -->
-    <div class="card">
-      <span class="card-title">📋 Otros Paquetes Disponibles</span>
-      <div class="other-tiers">
-        <div class="tier-row">
-          <span>🖼️ <strong>Imagen Personalizada</strong> (JPG para WhatsApp)</span>
-          <span class="tier-price">$50 MXN</span>
+    <!-- =========================================================
+         PIE DE PÁGINA (LOS 3 BENEFICIOS DEL FLYER)
+         ========================================================= -->
+    <div class="footer-badges-container">
+      <div class="badge-item">
+        <div class="badge-icon">🕒</div>
+        <div class="badge-content">
+          <h4>100% Personalizadas</h4>
+          <p>(Tu idea, nuestro diseño)</p>
         </div>
-        <div class="tier-row">
-          <span>📄 <strong>Imagen + Botones Interactivos</strong> (PDF con Ubicación y WhatsApp)</span>
-          <span class="tier-price">$100 MXN</span>
+      </div>
+
+      <div class="badge-item">
+        <div class="badge-icon">✏️</div>
+        <div class="badge-content">
+          <h4>Diseño Creativo</h4>
+          <p>(Estilo único)</p>
         </div>
-        <div class="tier-row">
-          <span>🎬 <strong>Video Animado Temático</strong> (MP4 directo)</span>
-          <span class="tier-price">$200 MXN</span>
+      </div>
+
+      <div class="badge-item">
+        <div class="badge-icon">📱</div>
+        <div class="badge-content">
+          <h4>Entrega Digital</h4>
+          <p>(Rápida y segura)</p>
         </div>
       </div>
     </div>
+
+    <div class="footer-signature-script">
+      Haz de tu evento algo inolvidable ✨
+    </div>
+
   </div>
 
+  <!-- Script inteligente de navegación para GitHub Pages y local -->
   <script>
-    function navegarMuestra(slug) {
+    function abrirMuestra(carpeta) {
       if (window.location.hostname.includes('github.io')) {
-        // Enlace exacto para GitHub Pages sin importar si estás en /catalogo o /
-        window.location.href = '/Invitations/' + slug + '/';
+        window.location.href = '/Invitations/' + carpeta + '/';
       } else {
-        // Si lo abres en tu computadora de forma local
         const path = window.location.pathname;
         if (path.includes('/catalogo/')) {
-          window.location.href = '../' + slug + '/index.html';
+          window.location.href = '../' + carpeta + '/index.html';
         } else {
-          window.location.href = './' + slug + '/index.html';
+          window.location.href = './' + carpeta + '/index.html';
         }
       }
     }
