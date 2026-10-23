@@ -482,6 +482,14 @@
       border: 1px solid rgba(147, 197, 253, 0.5);
     }
 
+    .btn-live-gold {
+      background: linear-gradient(135deg, #c9a227, #8a6a1f);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(201, 162, 39, 0.55);
+      border: 1px solid rgba(246, 231, 168, 0.6);
+      text-shadow: 0 1px 2px rgba(60, 45, 10, 0.5);
+    }
+
     .btn-whatsapp-order {
       background: linear-gradient(135deg, #10b981, #059669);
       color: #fff;
@@ -970,50 +978,59 @@
         <span class="package-type">Página Web Interactiva</span>
 
         <div class="mockup-container">
-          <div class="mini-phone" style="width:90px; height:145px; background:linear-gradient(180deg, #1e3a8a, #0a192f);">
-            <div style="font-size:0.4rem; color:#93c5fd; letter-spacing:1px;">Mis XV Años</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.68rem; color:#fff; font-weight:700;">Valeria</div>
-            <div class="mini-btn" style="margin-top:8px;">Confirmar</div>
-            <div class="mini-btn location">Ubicación</div>
+          <!-- Muestra 1: XV Años Formal -->
+          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:78px; height:140px; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
+            <div style="font-size:0.38rem; color:#93c5fd; letter-spacing:1px;">Mis XV Años</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.62rem; color:#fff; font-weight:700;">Valeria</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.32rem;">Confirmar</div>
+            <div class="mini-btn location" style="font-size:0.32rem;">Ubicación</div>
+          </div>
+          <!-- Muestra 2: Velación San Judas -->
+          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:78px; height:140px; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 16px rgba(212,175,55,0.45); cursor:pointer;">
+            <div style="font-size:0.38rem; color:#8a6a1f; font-weight:700; letter-spacing:1px;">Velación</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.56rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.3rem; background:#c9a227; color:#fff;">Puertas 3D</div>
+            <div class="mini-btn location" style="font-size:0.3rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">Croquis GPS</div>
           </div>
         </div>
 
         <ul class="features-list">
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Diseño personalizado</strong> (XV Años, Bodas, Bautizos)</span>
+            <span><strong>Diseño personalizado</strong> (XV Años, Bodas, Bautizos, Velaciones)</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Datos del evento</strong> (fecha, hora y lugares)</span>
+            <span><strong>Datos del evento</strong> (fecha, hora, lugar y programa)</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Detalles del evento</strong> y de la temática</span>
+            <span><strong>Apertura interactiva</strong> (Sobre 3D o Puertas de Capilla 3D)</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Sobre 3D interactivo</strong> de apertura</span>
+            <span><strong>Música de fondo con reproductor</strong> (activar/pausar a tu gusto)</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Música de fondo</strong> con reproductor de vinilo giratorio</span>
+            <span><strong>Croquis ilustrado y mapa GPS</strong> con enlace a Google Maps</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span><strong>Botones de ubicación</strong> (Misa y Salón)</span>
-          </li>
-          <li>
-            <span class="check-icon">✓</span>
-            <span><strong>Página web completa</strong> con código de vestimenta, lluvia de sobres y RSVP</span>
+            <span><strong>Página web completa</strong> con fotos de invitados/grupo, logo y agradecimiento</span>
           </li>
         </ul>
 
         <div class="card-cursive-note">Tu invitación, como una página especial</div>
 
-        <!-- Botón que abre la muestra en vivo de Ximena sin error 404 -->
+        <!-- Botón Muestra 1: XV Años Ximena -->
         <a href="/Invitations/xv-ximena/" onclick="abrirMuestra('xv-ximena'); return false;" class="btn-action-primary btn-live-blue" style="margin-bottom: 8px;">
           ✉️ Ver Muestra en Vivo (XV Años Ximena)
+        </a>
+
+        <!-- Botón Muestra 2: Velación San Judas Tadeo -->
+        <a href="/Invitations/san-judas/" onclick="abrirMuestra('san-judas'); return false;" class="btn-action-primary btn-live-gold" style="margin-bottom: 8px;">
+          🙏 Ver Muestra en Vivo (San Judas Tadeo)
         </a>
 
         <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$300%20(P%C3%A1gina%20Web%20Interactiva)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
