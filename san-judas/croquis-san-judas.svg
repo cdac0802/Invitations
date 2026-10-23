@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 796" width="800" height="796" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="cqGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6e7a8"/>
+      <stop offset="0.5" stop-color="#c9a227"/>
+      <stop offset="1" stop-color="#8a6a1f"/>
+    </linearGradient>
+    <clipPath id="cqMapClip"><rect x="18" y="0" width="764" height="600"/></clipPath>
+    <marker id="cqArrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3" markerHeight="3" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b8860b"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo y marco -->
+  <rect x="0" y="0" width="800" height="796" fill="#fffdf7"/>
+  <rect x="6" y="6" width="788" height="784" fill="none" stroke="url(#cqGold)" stroke-width="4" rx="14"/>
+  <rect x="14" y="14" width="772" height="768" fill="none" stroke="#e8d48a" stroke-width="1" rx="10"/>
+
+  <!-- Encabezado -->
+  <text x="400" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#8a6a1f" letter-spacing="4">CROQUIS DE LLEGADA</text>
+  <text x="400" y="66" text-anchor="middle" font-size="14" font-style="italic" fill="#a07d25">Velación San Judas Tadeo · Campestre Aviación · Calle Julieta</text>
+
+  <!-- ===================== MAPA ===================== -->
+  <g transform="translate(0,80)">
+    <g clip-path="url(#cqMapClip)">
+      <rect x="18" y="0" width="764" height="600" fill="#fbf6ea"/>
+
+      <!-- Calles de contexto (este de la carretera) -->
+      <g stroke="#e3dccb" stroke-width="5" stroke-linecap="round" fill="none">
+        <line x1="745" y1="95" x2="800" y2="125"/>
+        <line x1="700" y1="230" x2="800" y2="285"/>
+        <line x1="672" y1="310" x2="800" y2="380"/>
+        <line x1="630" y1="430" x2="800" y2="520"/>
+      </g>
+
+      <!-- Camino superior -->
+      <line x1="60" y1="35" x2="720" y2="176" stroke="#e3dccb" stroke-width="7" stroke-linecap="round"/>
+      <!-- Camino sur (Santa Cecilia) -->
+      <line x1="18" y1="390" x2="599" y2="512" stroke="#e3dccb" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- Calles Alfa ... Kilo -->
+      <g stroke="#ddd5c2" stroke-width="6" stroke-linecap="round">
+        <line x1="547" y1="500" x2="668" y2="165"/>
+        <line x1="505" y1="491" x2="626" y2="156"/>
+        <line x1="463" y1="483" x2="584" y2="147"/>
+        <line x1="421" y1="474" x2="542" y2="138"/>
+        <line x1="379" y1="465" x2="500" y2="130"/>
+        <line x1="337" y1="456" x2="458" y2="121"/>
+        <line x1="295" y1="447" x2="416" y2="112"/>
+        <line x1="253" y1="439" x2="374" y2="103"/>
+        <line x1="211" y1="430" x2="332" y2="94"/>
+        <line x1="127" y1="412" x2="248" y2="76"/>
+      </g>
+      <!-- Calle Julieta: tramo superior normal, tramo inferior (hacia el evento) resaltado -->
+      <line x1="212" y1="302" x2="290" y2="86" stroke="#ddd5c2" stroke-width="6" stroke-linecap="round"/>
+      <line x1="169" y1="421" x2="212" y2="302" stroke="#f1dc8f" stroke-width="11" stroke-linecap="round"/>
+
+      <!-- Nombres de calles -->
+      <g font-size="11" fill="#8c8576" text-anchor="middle" font-family="Arial, sans-serif">
+        <text transform="translate(634,259) rotate(-70.2)">C. Alfa</text>
+        <text transform="translate(592,250) rotate(-70.2)">C. Bravo</text>
+        <text transform="translate(550,242) rotate(-70.2)">C. Charlie</text>
+        <text transform="translate(508,233) rotate(-70.2)">C. Delta</text>
+        <text transform="translate(466,224) rotate(-70.2)">C. Eco</text>
+        <text transform="translate(424,215) rotate(-70.2)">C. Fox</text>
+        <text transform="translate(382,206) rotate(-70.2)">C. Golfo</text>
+        <text transform="translate(340,198) rotate(-70.2)">C. Hotel</text>
+        <text transform="translate(298,189) rotate(-70.2)">C. India</text>
+        <text transform="translate(214,171) rotate(-70.2)">C. Kilo</text>
+      </g>
+      <text transform="translate(150,384) rotate(-70.2)" font-size="13" font-weight="700" fill="#8a6a1f" text-anchor="middle" font-family="Arial, sans-serif">CALLE JULIETA</text>
+
+      <!-- Camino de acceso (desde Km 11) -->
+      <line x1="40" y1="266" x2="641" y2="392" stroke="#d8cfb9" stroke-width="12" stroke-linecap="round"/>
+
+      <!-- Carretera 26 -->
+      <line x1="560" y1="620" x2="790" y2="-20" stroke="#cfc6b0" stroke-width="30" stroke-linecap="butt"/>
+      <line x1="560" y1="620" x2="790" y2="-20" stroke="#ffffff" stroke-width="2" stroke-dasharray="14 12"/>
+      <text transform="translate(706,250) rotate(-70.2)" font-size="13" font-weight="700" fill="#6b6455" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="2">CARRETERA 26</text>
+      <!-- Escudos 26 -->
+      <g font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">
+        <rect x="735" y="88" width="24" height="18" rx="4" fill="#ffffff" stroke="#6b6455"/>
+        <text x="747" y="101" fill="#3d3a33">26</text>
+        <rect x="598" y="520" width="24" height="18" rx="4" fill="#ffffff" stroke="#6b6455"/>
+        <text x="610" y="533" fill="#3d3a33">26</text>
+      </g>
+
+      <!-- Ruta dorada -->
+      <polyline points="708,215 650,368 641,392 212,302 196,346"
+        fill="none" stroke="#c9a227" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="2 12" marker-end="url(#cqArrow)"/>
+
+      <!-- Puntos de referencia -->
+      <g font-family="Arial, sans-serif">
+        <!-- Tecate Six Km 11 -->
+        <circle cx="626" cy="414" r="7" fill="#2b6cb0" stroke="#fff" stroke-width="2"/>
+        <text x="660" y="440" font-size="12" font-weight="700" fill="#2b4c7e" stroke="#fffdf7" stroke-width="4" paint-order="stroke">Tecate Six (Km 11)</text>
+
+        <!-- Campestre Santa Cecilia -->
+        <circle cx="330" cy="478" r="5" fill="#9a9384"/>
+        <text x="340" y="482" font-size="11" fill="#7a7466" stroke="#fbf6ea" stroke-width="3" paint-order="stroke">Campestre Santa Cecilia</text>
+
+        <!-- Jardín Girona Eventos -->
+        <circle cx="318" cy="62" r="5" fill="#9b59b6"/>
+        <text x="328" y="58" font-size="11" fill="#7d4a96" stroke="#fbf6ea" stroke-width="3" paint-order="stroke">Jardín Girona Eventos</text>
+
+        <!-- Las Bugambilias -->
+        <circle cx="690" cy="335" r="5" fill="#9b59b6"/>
+        <text x="700" y="331" font-size="11" fill="#7d4a96" stroke="#fbf6ea" stroke-width="3" paint-order="stroke">Las Bugambilias</text>
+
+        <!-- Zona -->
+        <text x="470" y="40" font-size="14" font-style="italic" fill="#9a8a5c" text-anchor="middle" font-family="Georgia, serif">Campestre Aviación</text>
+      </g>
+
+      <!-- Direcciones de la carretera -->
+      <g font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#6b5a2a">
+        <text x="725" y="28" text-anchor="end" stroke="#fbf6ea" stroke-width="4" paint-order="stroke">Hacia Hermosillo ↗</text>
+        <text x="552" y="590" text-anchor="end" stroke="#fbf6ea" stroke-width="4" paint-order="stroke">↙ Hacia Bahía de Kino</text>
+      </g>
+
+      <!-- Pasos numerados -->
+      <g font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+        <circle cx="660" cy="378" r="12" fill="#8a6a1f" stroke="#fff" stroke-width="2"/>
+        <text x="660" y="383" fill="#fff">1</text>
+        <circle cx="236" cy="284" r="12" fill="#8a6a1f" stroke="#fff" stroke-width="2"/>
+        <text x="236" y="289" fill="#fff">2</text>
+      </g>
+
+      <!-- Pin del evento -->
+      <g transform="translate(188,370)">
+        <circle cx="0" cy="0" r="22" fill="#c9a227" opacity="0.25"/>
+        <path d="M0,0 C-4,-10 -14,-18 -14,-30 A14,14 0 1 1 14,-30 C14,-18 4,-10 0,0 z" fill="#c0392b" stroke="#fff" stroke-width="2"/>
+        <circle cx="0" cy="-30" r="5.5" fill="#fff"/>
+      </g>
+
+      <!-- Etiqueta del lugar -->
+      <line x1="120" y1="462" x2="176" y2="352" stroke="#8a6a1f" stroke-width="1.5"/>
+      <rect x="28" y="462" width="176" height="50" rx="10" fill="#ffffff" stroke="url(#cqGold)" stroke-width="2.5"/>
+      <text x="116" y="483" text-anchor="middle" font-size="13" font-weight="700" fill="#8a6a1f">✝ LUGAR DEL EVENTO</text>
+      <text x="116" y="501" text-anchor="middle" font-size="11.5" fill="#5a4a22" font-family="Arial, sans-serif">Calle Julieta · Rezo 8:00 PM</text>
+
+      <!-- Rosa de los vientos -->
+      <g transform="translate(748,548)" font-family="Arial, sans-serif">
+        <circle r="22" fill="#ffffff" stroke="#c9a227" stroke-width="1.5"/>
+        <path d="M0,-17 L6,4 L0,0 L-6,4 z" fill="#8a6a1f"/>
+        <path d="M0,17 L6,-4 L0,0 L-6,-4 z" fill="#e8d48a"/>
+        <text y="-25" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6a1f">N</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================== PASOS ===================== -->
+  <line x1="40" y1="688" x2="760" y2="688" stroke="#e8d48a" stroke-width="1"/>
+  <g font-size="14" fill="#4a3c1a" font-family="Arial, sans-serif">
+    <circle cx="44" cy="709" r="10" fill="#8a6a1f"/><text x="44" y="714" fill="#fff" text-anchor="middle" font-weight="700" font-size="12">1</text>
+    <text x="62" y="714">Sobre la <tspan font-weight="700">Carretera 26</tspan>, rumbo a Bahía de Kino, llega al <tspan font-weight="700">Km 11 (Tecate Six)</tspan> y da vuelta a la <tspan font-weight="700">derecha</tspan>.</text>
+    <circle cx="44" cy="735" r="10" fill="#8a6a1f"/><text x="44" y="740" fill="#fff" text-anchor="middle" font-weight="700" font-size="12">2</text>
+    <text x="62" y="740">Sigue derecho pasando C. Alfa, Bravo, Charlie… hasta C. India y gira a la <tspan font-weight="700">izquierda en Calle Julieta</tspan> (bajando).</text>
+    <circle cx="44" cy="761" r="10" fill="#c9a227"/><text x="44" y="765" fill="#fff" text-anchor="middle" font-weight="700" font-size="12">✝</text>
+    <text x="62" y="765">¡El lugar del evento está a unos metros! Croquis ilustrativo, no a escala.</text>
+  </g>
+</svg>
