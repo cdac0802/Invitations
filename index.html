@@ -631,23 +631,26 @@
     /* Selector de muestras en el modal de $50 */
     .sample-switcher {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       width: 100%;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .sample-tab-btn {
-      flex: 1;
-      padding: 9px 12px;
+      flex: 1 1 auto;
+      min-width: 90px;
+      padding: 7px 10px;
       border-radius: 999px;
       border: 1px solid rgba(147, 197, 253, 0.4);
       background: rgba(15, 32, 66, 0.8);
       color: #bae6fd;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
+      text-align: center;
     }
 
     .sample-tab-btn.active {
@@ -773,12 +776,15 @@
         <h2 class="package-name">Invitación Normal</h2>
         <span class="package-type">Personalizada</span>
 
-        <div class="mockup-container">
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('brianna')" title="Toca para ver muestra Cumpleaños Brianna ($50)">
+        <div class="mockup-container" style="gap: 8px;">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('brianna')" title="Toca para ver muestra Cumpleaños Brianna ($50)" style="width:72px; height:136px;">
             <img id="thumbMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna" loading="lazy" />
           </div>
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ximena')" title="Toca para ver muestra XV Ximena sin botones ($50)" style="border-color:#60a5fa; box-shadow:0 0 16px rgba(96,165,250,0.45);">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ximena')" title="Toca para ver muestra XV Ximena sin botones ($50)" style="width:72px; height:136px; border-color:#60a5fa; box-shadow:0 0 16px rgba(96,165,250,0.45);">
             <img id="thumbMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" loading="lazy" />
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('babyshower')" title="Toca para ver muestra Baby Shower Mariel ($50)" style="width:72px; height:136px; border-color:#fbbf24; box-shadow:0 0 16px rgba(251,191,36,0.45);">
+            <img id="thumbMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" loading="lazy" />
           </div>
         </div>
 
@@ -1095,11 +1101,15 @@
           🎂 Cumpleaños Brianna
         </button>
         <button type="button" id="tab50Ximena" class="sample-tab-btn" onclick="cambiarMuestra50('ximena')">
-          👑 XV Años Ximena (Sin Botones)
+          👑 XV Años Ximena
+        </button>
+        <button type="button" id="tab50BabyShower" class="sample-tab-btn" onclick="cambiarMuestra50('babyshower')">
+          🐝 Baby Shower Mariel
         </button>
       </div>
       <img id="fullMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna K-Pop Demon Hunters" />
       <img id="fullMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" style="display:none; border-color:rgba(96, 165, 250, 0.75); box-shadow:0 0 35px rgba(59, 130, 246, 0.5);" />
+      <img id="fullMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" style="display:none; border-color:rgba(251, 191, 36, 0.75); box-shadow:0 0 35px rgba(245, 158, 11, 0.5);" />
       <div style="display:flex; gap:10px; width:100%;">
         <a href="https://wa.me/526623355306?text=Hola,%20vi%20las%20muestras%20de%20$50%20y%20me%20interesa%20el%20paquete%20de%20Invitaci%C3%B3n%20Normal%20Personalizada" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
           💬 Pedir por WhatsApp ($50)
@@ -1174,18 +1184,28 @@
     function cambiarMuestra50(cual) {
       const imgBrianna = document.getElementById('fullMuestra50');
       const imgXimena = document.getElementById('fullMuestra50Ximena');
+      const imgBabyShower = document.getElementById('fullMuestra50BabyShower');
       const tabBrianna = document.getElementById('tab50Brianna');
       const tabXimena = document.getElementById('tab50Ximena');
+      const tabBabyShower = document.getElementById('tab50BabyShower');
+
+      imgBrianna.style.display = 'none';
+      imgXimena.style.display = 'none';
+      if (imgBabyShower) imgBabyShower.style.display = 'none';
+
+      tabBrianna.classList.remove('active');
+      tabXimena.classList.remove('active');
+      if (tabBabyShower) tabBabyShower.classList.remove('active');
+
       if (cual === 'ximena') {
-        imgBrianna.style.display = 'none';
         imgXimena.style.display = 'block';
-        tabBrianna.classList.remove('active');
         tabXimena.classList.add('active');
+      } else if (cual === 'babyshower') {
+        if (imgBabyShower) imgBabyShower.style.display = 'block';
+        if (tabBabyShower) tabBabyShower.classList.add('active');
       } else {
         imgBrianna.style.display = 'block';
-        imgXimena.style.display = 'none';
         tabBrianna.classList.add('active');
-        tabXimena.classList.remove('active');
       }
     }
 
