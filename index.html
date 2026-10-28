@@ -977,20 +977,27 @@
         <h2 class="package-name">Invitación en</h2>
         <span class="package-type">Página Web Interactiva</span>
 
-        <div class="mockup-container">
+        <div class="mockup-container" style="gap: 8px;">
           <!-- Muestra 1: XV Años Formal -->
-          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:78px; height:140px; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
-            <div style="font-size:0.38rem; color:#93c5fd; letter-spacing:1px;">Mis XV Años</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.62rem; color:#fff; font-weight:700;">Valeria</div>
-            <div class="mini-btn" style="margin-top:6px; font-size:0.32rem;">Confirmar</div>
-            <div class="mini-btn location" style="font-size:0.32rem;">Ubicación</div>
+          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:72px; height:136px; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
+            <div style="font-size:0.36rem; color:#93c5fd; letter-spacing:0.5px;">XV Azul</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.58rem; color:#fff; font-weight:700;">Ximena</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.3rem;">Confirmar</div>
+            <div class="mini-btn location" style="font-size:0.3rem;">Ubicación</div>
           </div>
-          <!-- Muestra 2: Velación San Judas -->
-          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:78px; height:140px; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 16px rgba(212,175,55,0.45); cursor:pointer;">
-            <div style="font-size:0.38rem; color:#8a6a1f; font-weight:700; letter-spacing:1px;">Velación</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.56rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
-            <div class="mini-btn" style="margin-top:6px; font-size:0.3rem; background:#c9a227; color:#fff;">Puertas 3D</div>
-            <div class="mini-btn location" style="font-size:0.3rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">Croquis GPS</div>
+          <!-- Muestra 2: XV Años Esmeralda -->
+          <div class="mini-phone" onclick="abrirMuestra('esmeralda-xv')" title="Toca para ver muestra XV Años Esmeralda" style="width:72px; height:136px; background:linear-gradient(180deg, #064e3b, #022c22); border-color:#10b981; box-shadow:0 0 14px rgba(16,185,129,0.4); cursor:pointer;">
+            <div style="font-size:0.36rem; color:#a7f3d0; letter-spacing:0.5px;">XV Verde</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.58rem; color:#fde047; font-weight:700; line-height:1.1; margin:2px 0;">Esmeralda</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem; background:#059669; color:#fff; border-color:#34d399;">Sobre 3D</div>
+            <div class="mini-btn location" style="font-size:0.28rem; background:rgba(212,175,55,0.25); color:#fde047; border-color:#eab308;">Música</div>
+          </div>
+          <!-- Muestra 3: Velación San Judas -->
+          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:72px; height:136px; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 14px rgba(212,175,55,0.4); cursor:pointer;">
+            <div style="font-size:0.36rem; color:#8a6a1f; font-weight:700; letter-spacing:0.5px;">Velación</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.52rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem; background:#c9a227; color:#fff;">Puertas 3D</div>
+            <div class="mini-btn location" style="font-size:0.28rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">GPS</div>
           </div>
         </div>
 
@@ -1025,10 +1032,15 @@
 
         <!-- Botón Muestra 1: XV Años Ximena -->
         <a href="/Invitations/xv-ximena/" onclick="abrirMuestra('xv-ximena'); return false;" class="btn-action-primary btn-live-blue" style="margin-bottom: 8px;">
-          ✉️ Ver Muestra en Vivo (XV Años Ximena)
+          ✉️ Ver Muestra en Vivo (XV Años Azul - Ximena)
         </a>
 
-        <!-- Botón Muestra 2: Velación San Judas Tadeo -->
+        <!-- Botón Muestra 2: XV Años Esmeralda -->
+        <a href="/Invitations/esmeralda-xv/" onclick="abrirMuestra('esmeralda-xv'); return false;" class="btn-action-primary btn-live-emerald" style="margin-bottom: 8px;">
+          👑 Ver Muestra en Vivo (XV Años Verde Esmeralda)
+        </a>
+
+        <!-- Botón Muestra 3: Velación San Judas Tadeo -->
         <a href="/Invitations/san-judas/" onclick="abrirMuestra('san-judas'); return false;" class="btn-action-primary btn-live-gold" style="margin-bottom: 8px;">
           🙏 Ver Muestra en Vivo (San Judas Tadeo)
         </a>
