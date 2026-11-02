@@ -873,9 +873,13 @@
         <h2 class="package-name">Invitación Digital</h2>
         <span class="package-type">Animada + Video</span>
 
-        <div class="mockup-container">
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestra200()" title="Toca para reproducir el video de muestra ($200)" style="position:relative; border-color:#ec4899; box-shadow:0 0 16px rgba(236,72,153,0.5);">
-            <img src="ejemplo-50.jpg" alt="Vista previa Video Animado $200" style="filter: brightness(0.75);" loading="lazy" />
+        <div class="mockup-container" style="gap: 10px;">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestra200('esmeralda')" title="Toca para ver video animado XV Esmeralda ($200)" style="width:78px; height:140px; position:relative; border-color:#10b981; box-shadow:0 0 16px rgba(16,185,129,0.5);">
+            <img src="portada-esmeralda-video.jpg" alt="Vista previa Video Animado 60fps XV Esmeralda" style="filter: brightness(0.85);" loading="lazy" />
+            <div class="mini-play-icon" style="position:absolute; inset:0; margin:auto;">▶</div>
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestra200('brianna')" title="Toca para ver video animado Brianna K-Pop ($200)" style="width:78px; height:140px; position:relative; border-color:#ec4899; box-shadow:0 0 16px rgba(236,72,153,0.5);">
+            <img src="ejemplo-50.jpg" alt="Vista previa Video Animado K-Pop Brianna" style="filter: brightness(0.75);" loading="lazy" />
             <div class="mini-play-icon" style="position:absolute; inset:0; margin:auto;">▶</div>
           </div>
         </div>
@@ -901,8 +905,8 @@
 
         <div class="card-cursive-note">Una experiencia que se disfruta</div>
 
-        <button type="button" onclick="abrirMuestra200()" class="btn-action-primary btn-live-pink" style="margin-bottom: 8px;">
-          🎬 Ver Muestra de Video ($200)
+        <button type="button" onclick="abrirMuestra200('esmeralda')" class="btn-action-primary btn-live-pink" style="margin-bottom: 8px;">
+          🎬 Ver Videos de Muestra ($200)
         </button>
 
         <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
@@ -1170,13 +1174,20 @@
   <div class="lightbox-modal" id="lightboxModal200" onclick="cerrarMuestra200(event)">
     <div class="lightbox-content">
       <div style="font-size:0.84rem; color:#fbcfe8; font-weight:700; text-align:center;">
-        🎬 Muestra de Invitación Digital Animada + Video ($200)
+        🎬 Muestras de Video Animado ($200)
       </div>
+
+      <!-- Selector de video -->
+      <div class="sample-switcher" style="margin-bottom: 6px;">
+        <button type="button" class="sample-tab-btn active" id="tabVideoEsmeralda" onclick="cambiarVideo200('esmeralda')">👑 XV Esmeralda (60 fps)</button>
+        <button type="button" class="sample-tab-btn" id="tabVideoBrianna" onclick="cambiarVideo200('brianna')">🎤 K-Pop Brianna</button>
+      </div>
+
       <div class="video-200-frame">
-        <video id="videoMuestra200" src="video-muestra-200.mp4" controls playsinline preload="none"></video>
+        <video id="videoMuestra200" src="video-esmeralda-60fps.mp4" controls playsinline preload="auto"></video>
       </div>
       <div style="display:flex; gap:10px; width:100%;">
-        <a href="https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
+        <a id="btnWhatsapp200" href="https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20XV%20Esmeralda%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
           💬 Pedir Paquete ($200)
         </a>
         <button type="button" class="btn-close-lightbox" onclick="cerrarMuestra200()">
@@ -1244,14 +1255,41 @@
       }
     }
 
-    function abrirMuestra200() {
-      const modal = document.getElementById('lightboxModal200');
+    function cambiarVideo200(cual) {
       const vid = document.getElementById('videoMuestra200');
-      modal.classList.add('open');
-      if (vid) {
-        vid.currentTime = 0;
-        vid.play().catch(function() {});
+      const tabEsme = document.getElementById('tabVideoEsmeralda');
+      const tabBri = document.getElementById('tabVideoBrianna');
+      const btnWa = document.getElementById('btnWhatsapp200');
+
+      if (cual === 'esmeralda') {
+        if (tabEsme) tabEsme.classList.add('active');
+        if (tabBri) tabBri.classList.remove('active');
+        if (vid) {
+          vid.src = 'video-esmeralda-60fps.mp4';
+          vid.currentTime = 0;
+          vid.play().catch(function() {});
+        }
+        if (btnWa) {
+          btnWa.href = 'https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20XV%20Esmeralda%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)';
+        }
+      } else {
+        if (tabBri) tabBri.classList.add('active');
+        if (tabEsme) tabEsme.classList.remove('active');
+        if (vid) {
+          vid.src = 'video-muestra-200.mp4';
+          vid.currentTime = 0;
+          vid.play().catch(function() {});
+        }
+        if (btnWa) {
+          btnWa.href = 'https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20Brianna%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)';
+        }
       }
+    }
+
+    function abrirMuestra200(cual) {
+      const modal = document.getElementById('lightboxModal200');
+      modal.classList.add('open');
+      cambiarVideo200(cual || 'esmeralda');
     }
 
     function cerrarMuestra200(e) {
