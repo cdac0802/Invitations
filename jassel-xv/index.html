@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Mis XV Años · Jassel Yamileth 💙👑</title>
+  <meta name="description" content="Acompáñanos a celebrar los XV Años de Jassel Yamileth el Sábado 5 de Diciembre de 2026." />
+  <meta property="og:title" content="Mis XV Años · Jassel Yamileth 👑💙" />
+  <meta property="og:description" content="En compañía y amor de mis padres Lizbeth González Martínez y Ezequiel Alcántara Velázquez, tenemos el honor de invitarlos a Mis XV Años." />
+  <meta name="theme-color" content="#07193d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --royal-dark: #051129;
+      --royal-deep: #0b2252;
+      --royal-main: #143c8c;
+      --royal-bright: #2563eb;
+      --royal-glow: #60a5fa;
+      --royal-ice: #dbeafe;
+      --silver-light: #f8fafc;
+      --gold-main: #d4af37;
+      --gold-bright: #fef08a;
+      --gold-grad: linear-gradient(135deg, #fff6c5 0%, #e5c158 35%, #b8860b 65%, #fbf0b9 100%);
+      --silver-grad: linear-gradient(135deg, #ffffff 0%, #dbeafe 45%, #93c5fd 100%);
+      --royal-grad: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #0f2963 100%);
+      --card-bg: rgba(9, 27, 66, 0.82);
+      --card-border: rgba(147, 197, 253, 0.38);
+      --text-white: #ffffff;
+      --text-soft: #e0f2fe;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-white);
+      background-color: var(--royal-dark);
+      background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.48) 0%, transparent 68%),
+        radial-gradient(ellipse at 50% 100%, rgba(20, 60, 140, 0.65) 0%, transparent 70%),
+        radial-gradient(circle at 85% 20%, rgba(96, 165, 250, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 15% 75%, rgba(212, 175, 55, 0.14) 0%, transparent 40%);
+      background-attachment: scroll;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.locked { overflow: hidden; }
+
+    /* =========================================================
+       PORTADA INTERACTIVA 3D (SOBRE DE GALA AZUL REY Y PLATA/ORO)
+       ========================================================= */
+    .envelope-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #102e6b 0%, #051129 85%);
+      padding: 20px;
+      perspective: 1200px;
+      transition: opacity 0.85s ease 0.55s, visibility 0.85s ease 0.55s;
+    }
+
+    .envelope-screen.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .envelope-kicker {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      letter-spacing: 4.5px;
+      color: var(--royal-ice);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .envelope-quince-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.9rem;
+      color: #ffffff;
+      text-shadow: 0 4px 18px rgba(96, 165, 250, 0.65);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: 320px;
+      height: 220px;
+      cursor: pointer;
+      perspective: 1200px;
+      transition: transform 0.3s ease;
+    }
+
+    .envelope-wrapper:active {
+      transform: scale(0.97);
+    }
+
+    .envelope-box {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #153e90, #081c45);
+      border: 2px solid rgba(191, 219, 254, 0.65);
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(37, 99, 235, 0.45);
+      overflow: hidden;
+    }
+
+    .envelope-box::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9px;
+      pointer-events: none;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 115px;
+      background: linear-gradient(180deg, #2563eb, #133985);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      border-top: 2px solid #bfdbfe;
+      transform-origin: top center;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 5;
+    }
+
+    .envelope-screen.opened .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope-seal {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--gold-grad);
+      box-shadow: 0 0 0 4px #0b2252, 0 0 0 6px #93c5fd, 0 8px 22px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      animation: pulseSeal 2.4s infinite ease-in-out;
+    }
+
+    @keyframes pulseSeal {
+      0%, 100% { box-shadow: 0 0 0 4px #0b2252, 0 0 0 6px #93c5fd, 0 8px 22px rgba(0,0,0,0.6); }
+      50% { box-shadow: 0 0 0 4px #0b2252, 0 0 0 9px #dbeafe, 0 0 32px rgba(96, 165, 250, 0.9); }
+    }
+
+    .envelope-seal svg {
+      width: 34px;
+      height: 34px;
+      fill: #3b2805;
+    }
+
+    .envelope-instructions {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .btn-open-invite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #06183d;
+      background: linear-gradient(135deg, #ffffff 0%, #dbeafe 50%, #93c5fd 100%);
+      border: 1.5px solid #ffffff;
+      border-radius: 999px;
+      padding: 13px 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+    }
+
+    .envelope-subhint {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--royal-ice);
+      font-style: italic;
+    }
+
+    /* =========================================================
+       DESTELLOS AZUL REY, PLATA Y ORO
+       ========================================================= */
+    .sparkles-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      bottom: -10px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 8px #60a5fa;
+      opacity: 0;
+      animation: rise linear infinite;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.6); opacity: 0; }
+      15% { opacity: 0.9; }
+      100% { transform: translateY(-110vh) scale(1.25); opacity: 0; }
+    }
+
+    /* =========================================================
+       CONTENIDO PRINCIPAL
+       ========================================================= */
+    main {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 16px 120px;
+    }
+
+    section {
+      padding: 20px 0 10px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =========================================================
+       HERO: ILUSTRACIÓN VESTIDO AZUL REY Y BIENVENIDA
+       ========================================================= */
+    .hero-section {
+      text-align: center;
+      padding-top: 34px;
+    }
+
+    .crown-top {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 0 12px rgba(254, 240, 138, 0.7));
+    }
+
+    .hero-kicker {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      letter-spacing: 4px;
+      color: var(--royal-ice);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      width: 285px;
+      margin: 0 auto 22px;
+      border-radius: 160px 160px 28px 28px;
+      padding: 7px;
+      background: linear-gradient(135deg, #ffffff 0%, #93c5fd 35%, #d4af37 70%, #ffffff 100%);
+      box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(37, 99, 235, 0.55);
+    }
+
+    .hero-image-inner {
+      background: #ffffff;
+      border-radius: 154px 154px 22px 22px;
+      overflow: hidden;
+      padding: 12px 8px 6px;
+      position: relative;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 144px 144px 18px 18px;
+    }
+
+    .hero-mis15 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      letter-spacing: 5px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .hero-name {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+      font-size: 4.1rem;
+      margin: 4px 0 6px;
+      color: #ffffff;
+      text-shadow:
+        0 4px 20px rgba(37, 99, 235, 0.85),
+        0 0 10px rgba(255, 255, 255, 0.35);
+      line-height: 1.1;
+    }
+
+    .divider-royal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 14px auto;
+      color: var(--gold-bright);
+      font-size: 1.1rem;
+      max-width: 280px;
+    }
+
+    .divider-royal::before, .divider-royal::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #93c5fd, transparent);
+    }
+
+    /* FRASE DEL CUADERNO */
+    .quote-box {
+      background: rgba(15, 41, 99, 0.65);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      border-radius: 20px;
+      padding: 20px 18px;
+      margin-top: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-phrase {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.24rem;
+      line-height: 1.55;
+      color: #f0f9ff;
+    }
+
+    /* FECHA DESTACADA */
+    .date-banner {
+      margin: 24px auto 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .date-side {
+      font-size: 0.92rem;
+      letter-spacing: 2.5px;
+      color: var(--royal-ice);
+      border-top: 1px solid rgba(147, 197, 253, 0.6);
+      border-bottom: 1px solid rgba(147, 197, 253, 0.6);
+      padding: 8px 12px;
+      min-width: 96px;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .date-day-number {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.35));
+    }
+
+    /* =========================================================
+       TARJETAS DE GALA AZUL REY
+       ========================================================= */
+    .card-xv {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 22px;
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.5),
+        inset 0 0 24px rgba(59, 130, 246, 0.14);
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .card-xv::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.18rem;
+      letter-spacing: 3px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .card-title::before, .card-title::after {
+      content: '✦';
+      font-size: 0.85rem;
+      color: var(--royal-glow);
+    }
+
+    /* =========================================================
+       PADRES Y PADRINOS (HOJA 1 DEL CUADERNO)
+       ========================================================= */
+    .honor-intro {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.28rem;
+      font-style: italic;
+      color: var(--royal-ice);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .parents-names {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: #ffffff;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .amp-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      font-weight: normal;
+      display: inline-block;
+      margin: 2px 0;
+    }
+
+    .invite-honor-line {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--royal-ice);
+      margin-bottom: 8px;
+    }
+
+    .invite-quince-highlight {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(15, 41, 99, 0.55));
+      border: 1px solid rgba(147, 197, 253, 0.4);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin: 10px 0 20px;
+    }
+
+    .invite-quince-highlight .sub {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 3.5px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .invite-quince-highlight .name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    .honor-section-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-top: 16px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .godparents-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.04rem;
+      font-weight: 600;
+      color: #f8fafc;
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       CONTADOR REGRESIVO
+       ========================================================= */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .cd-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      border-radius: 14px;
+      padding: 12px 4px 10px;
+      text-align: center;
+    }
+
+    .cd-number {
+      font-family: 'Cinzel', serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(96, 165, 250, 0.65);
+    }
+
+    .cd-label {
+      font-size: 0.72rem;
+      color: var(--royal-ice);
+      margin-top: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       DÓNDE Y CUÁNDO (MISA Y RECEPCIÓN)
+       ========================================================= */
+    .event-block {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(147, 197, 253, 0.32);
+      border-radius: 18px;
+      padding: 20px 16px;
+      margin-bottom: 18px;
+    }
+
+    .event-block:last-child { margin-bottom: 0; }
+
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #06183d;
+      background: var(--silver-grad);
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .event-badge.gold {
+      background: var(--gold-grad);
+      color: #3b2805;
+    }
+
+    .event-time-big {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+
+    .event-venue-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .event-address {
+      font-size: 0.92rem;
+      color: var(--royal-ice);
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
+      border: 1px solid #93c5fd;
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-maps:active { transform: scale(0.97); }
+
+    /* =========================================================
+       ITINERARIO DE ACTIVIDADES (HOJA 2 DEL CUADERNO)
+       ========================================================= */
+    .timeline {
+      position: relative;
+      max-width: 380px;
+      margin: 10px auto 0;
+      padding: 8px 0;
+      text-align: left;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      bottom: 16px;
+      left: 26px;
+      width: 2px;
+      background: linear-gradient(180deg, #60a5fa, #d4af37, #60a5fa);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e40af, #0b2252);
+      border: 2px solid #93c5fd;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .timeline-content {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(147, 197, 253, 0.28);
+      border-radius: 14px;
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .timeline-activity {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .timeline-time {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(254, 240, 138, 0.4);
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       DETALLES ESPECIALES: COLOR RESERVADO Y SOBRE O REGALO
+       ========================================================= */
+    .details-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .detail-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(147, 197, 253, 0.32);
+      border-radius: 16px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .detail-icon {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .detail-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .detail-text {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      line-height: 1.45;
+    }
+
+    .reserved-swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+      border: 1.5px solid #93c5fd;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.6);
+    }
+
+    .reserved-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2563eb;
+      border: 2px solid #ffffff;
+    }
+
+    /* =========================================================
+       CONFIRMAR ASISTENCIA (WHATSAPP)
+       ========================================================= */
+    .rsvp-field {
+      text-align: left;
+      margin-bottom: 14px;
+    }
+
+    .rsvp-field label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--royal-ice);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .rsvp-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(147, 197, 253, 0.45);
+      border-radius: 12px;
+      background: rgba(5, 17, 41, 0.85);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .rsvp-input:focus {
+      outline: 2px solid var(--royal-glow);
+      outline-offset: 1px;
+    }
+
+    .btn-gold-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.94rem;
+      letter-spacing: 1.5px;
+      color: #3b2805;
+      background: var(--gold-grad);
+      border: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+      transition: transform 0.15s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-gold-action:active { transform: scale(0.97); }
+
+    /* CIERRE */
+    .closing-section {
+      text-align: center;
+      padding: 28px 10px 0;
+    }
+
+    .closing-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 4px 16px rgba(37, 99, 235, 0.8);
+      line-height: 1.2;
+    }
+
+    .closing-sub {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      letter-spacing: 3px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       BOTÓN FLOTANTE DE MÚSICA (A THOUSAND YEARS)
+       ========================================================= */
+    .music-pill {
+      position: fixed;
+      right: 16px;
+      bottom: 18px;
+      z-index: 90;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px 9px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #153e90, #081c45);
+      border: 1.5px solid #93c5fd;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65), 0 0 18px rgba(37, 99, 235, 0.45);
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: #ffffff;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .music-pill.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .music-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold-grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .music-icon-circle svg {
+      width: 14px;
+      height: 14px;
+      fill: #3b2805;
+      display: block;
+    }
+
+    .music-pill.playing .music-icon-circle {
+      animation: pulseMusic 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseMusic {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); box-shadow: 0 0 16px rgba(254, 240, 138, 0.85); }
+    }
+
+    .music-pill.paused {
+      background: rgba(8, 28, 69, 0.92);
+      border-color: #64748b;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body class="locked">
+
+  <!-- =========================================================
+       PORTADA INTERACTIVA: SOBRE DE GALA AZUL REY
+       ========================================================= -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope-kicker">Mis XV Años</div>
+    <div class="envelope-quince-title">Jassel Yamileth</div>
+
+    <div class="envelope-wrapper" id="envelopeWrapper" onclick="abrirSobre()">
+      <div class="envelope-box">
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">
+          <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="envelope-instructions">
+      <button type="button" class="btn-open-invite" onclick="abrirSobre()">
+        ✉️ Abrir Invitación
+      </button>
+      <div class="envelope-subhint">Toca el sobre para abrir con música</div>
+    </div>
+  </div>
+
+  <!-- DESTELLOS DE FONDO -->
+  <div class="sparkles-container" id="sparklesContainer" aria-hidden="true"></div>
+
+  <main>
+    <!-- =========================================================
+         HERO: VESTIDO AZUL REY + FRASE DE BIENVENIDA + FECHA
+         ========================================================= -->
+    <section class="hero-section">
+      <div class="crown-top reveal">👑</div>
+      <div class="hero-kicker reveal">Estás Cordialmente Invitado</div>
+
+      <div class="hero-image-wrap reveal">
+        <div class="hero-image-inner">
+          <img src="vestido-azul.jpg" alt="Mis XV Años Jassel Yamileth - Vestido Azul Rey" />
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="hero-mis15">Mis XV Años</div>
+        <h1 class="hero-name">Jassel Yamileth</h1>
+
+        <div class="divider-royal">✦ 💙 ✦</div>
+
+        <div class="quote-box">
+          <p class="hero-phrase">
+            “Llegaron mis 15 y con ellos una nueva etapa, nuevos sueños y muchas historias por escribir. Quiero celebrar este momento tan especial rodeada de las personas que quiero y me encantaría que tú fueras parte de esta noche.”
+          </p>
+        </div>
+
+        <!-- FECHA FORMAL: SÁBADO 5 DICIEMBRE 2026 -->
+        <div class="date-banner">
+          <div class="date-side">SÁBADO</div>
+          <div class="date-day-number">05</div>
+          <div class="date-side">
+            DICIEMBRE<br />
+            <span style="font-size: 0.82rem; color: var(--gold-bright);">2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PADRES Y PADRINOS (TAL CUAL LA HOJA DEL CUADERNO)
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv">
+        <div class="honor-intro">
+          En compañía y amor de mis padres:
+        </div>
+
+        <div class="parents-names">
+          Lizbeth González Martínez<br />
+          <span class="amp-script">y</span><br />
+          Ezequiel Alcántara Velázquez
+        </div>
+
+        <div class="invite-honor-line">
+          Tenemos el honor de invitarlos a:
+        </div>
+
+        <div class="invite-quince-highlight">
+          <div class="sub">Mis XV Años</div>
+          <div class="name">Jassel Yamileth</div>
+        </div>
+
+        <div class="honor-section-sub">Mis Padrinos</div>
+        <div class="godparents-box">
+          Anayeli de Jesús Sánchez<br />
+          <span class="amp-script" style="font-size:1.55rem;">y</span><br />
+          Samuel González Martínez
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTADOR REGRESIVO AL 5 DE DICIEMBRE 2026
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv" style="padding: 22px 16px;">
+        <h2 class="card-title">Cuenta Regresiva</h2>
+        <div class="countdown-grid">
+          <div class="cd-box">
+            <div id="cdDays" class="cd-number">00</div>
+            <div class="cd-label">Días</div>
+          </div>
+          <div class="cd-box">
+            <div id="cdHours" class="cd-number">00</div>
+            <div class="cd-label">Horas</div>
+          </div>
+          <div class="cd-box">
+            <div id="cdMins" class="cd-number">00</div>
+            <div class="cd-label">Min</div>
+          </div>
+          <div class="cd-box">
+            <div id="cdSecs" class="cd-number">00</div>
+            <div class="cd-label">Seg</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DÓNDE Y CUÁNDO: MISA Y RECEPCIÓN
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv">
+        <h2 class="card-title">Dónde & Cuándo</h2>
+
+        <!-- MISA -->
+        <div class="event-block">
+          <div class="event-badge">⛪ Misa de Acción de Gracias</div>
+          <div class="event-time-big">6:00 PM</div>
+          <div class="event-venue-name">Parroquia Padre Nuestro</div>
+          <div class="event-address">
+            Calle Treceava entre Tepehuajes y Benito Juárez García<br />
+            Col. Palo Verde, Hermosillo, Son.
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Parroquia+Padre+Nuestro+Colonia+Palo+Verde+Hermosillo+Sonora" target="_blank" rel="noopener noreferrer" class="btn-maps">
+            📍 Ver Ubicación de la Misa
+          </a>
+        </div>
+
+        <!-- RECEPCIÓN -->
+        <div class="event-block">
+          <div class="event-badge gold">🥂 Recepción</div>
+          <div class="event-time-big">9:00 PM</div>
+          <div class="event-venue-name">Eventos Lumi</div>
+          <div class="event-address">
+            Carretera 26 km 4.5<br />
+            Col. Las Minitas, Hermosillo, Son.
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Eventos+Lumi+Carretera+26+km+4.5+Hermosillo+Sonora" target="_blank" rel="noopener noreferrer" class="btn-maps">
+            📍 Ver Ubicación del Salón
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ITINERARIO DE ACTIVIDADES (HOJA 2 DEL CUADERNO)
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv">
+        <h2 class="card-title">Itinerario de Actividades</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">⛪</div>
+            <div class="timeline-content">
+              <span class="timeline-activity">Misa</span>
+              <span class="timeline-time">6:00 PM</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">🥂</div>
+            <div class="timeline-content">
+              <span class="timeline-activity">Recepción</span>
+              <span class="timeline-time">9:00 PM</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">💃</div>
+            <div class="timeline-content">
+              <span class="timeline-activity">Vals</span>
+              <span class="timeline-time">10:00 PM</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">🍽️</div>
+            <div class="timeline-content">
+              <span class="timeline-activity">Cena</span>
+              <span class="timeline-time">10:30 PM</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">✨</div>
+            <div class="timeline-content">
+              <span class="timeline-activity">Fin del Evento</span>
+              <span class="timeline-time">2:00 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DETALLES ESPECIALES: COLOR AZUL REY RESERVADO & REGALOS
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv">
+        <h2 class="card-title">Detalles Especiales</h2>
+
+        <div class="details-stack">
+          <!-- CÓDIGO DE VESTIMENTA Y COLOR RESERVADO -->
+          <div class="detail-card">
+            <div class="detail-icon">🤵👗</div>
+            <div class="detail-heading">Código de Vestimenta</div>
+            <div style="font-family:'Cinzel', serif; font-size:1.35rem; font-weight:800; letter-spacing:3px; color:#ffffff; margin:4px 0 8px;">
+              FORMAL
+            </div>
+            <div class="detail-text">
+              El color <strong>Azul Rey</strong> queda reservado exclusivamente para la quinceañera.
+            </div>
+            <div class="reserved-swatch">
+              <span class="reserved-dot"></span>
+              Azul Rey Reservado
+            </div>
+          </div>
+
+          <!-- SOBRE O REGALO -->
+          <div class="detail-card">
+            <div class="detail-icon">✉️🎁</div>
+            <div class="detail-heading">Sobre o Regalo</div>
+            <div class="detail-text">
+              Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con <strong>Jassel Yamileth</strong>, habrá recepción de <strong>sobre o regalo</strong> en el salón.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONFIRMACIÓN DE ASISTENCIA (RSVP)
+         ========================================================= -->
+    <section class="reveal">
+      <div class="card-xv">
+        <h2 class="card-title">Confirmar Asistencia</h2>
+        <p style="font-size:0.9rem; color:var(--royal-ice); margin-bottom:16px;">
+          Esperamos contar con tu valiosa presencia en esta noche tan mágica.
+        </p>
+
+        <div class="rsvp-field">
+          <label for="guestName">Nombre del invitado o familia</label>
+          <input class="rsvp-input" id="guestName" type="text" placeholder="Escribe tu nombre y apellidos" />
+        </div>
+
+        <div class="rsvp-field">
+          <label for="guestCount">Personas confirmadas</label>
+          <select class="rsvp-input" id="guestCount">
+            <option value="1 persona">1 persona</option>
+            <option value="2 personas" selected>2 personas</option>
+            <option value="3 personas">3 personas</option>
+            <option value="4 personas">4 personas</option>
+            <option value="Familia completa">Familia completa</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn-gold-action" id="btnRsvp">
+          💬 Confirmar por WhatsApp
+        </button>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <div class="closing-section reveal">
+      <div class="closing-script">¡Te esperamos!</div>
+      <span class="closing-sub">Jassel Yamileth · Mis XV Años</span>
+    </div>
+  </main>
+
+  <!-- MÚSICA DE FONDO: CHRISTINA PERRI - A THOUSAND YEARS (DESDE QUE EMPIEZA A CANTAR) -->
+  <audio id="bgAudio" loop preload="none"></audio>
+
+  <!-- BOTÓN FLOTANTE DE MÚSICA -->
+  <button type="button" class="music-pill" id="musicBtn" aria-label="Control de música">
+    <span class="music-icon-circle">
+      <svg id="musicIcon" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    </span>
+    <span id="musicText">A Thousand Years · Sonando</span>
+  </button>
+
+  <script>
+    // =========================================================
+    // CONFIGURACIÓN DINÁMICA
+    // =========================================================
+    const CONFIG = {
+      quinceanera: "Jassel Yamileth",
+      // Si la clienta pasa número de WhatsApp específico, se coloca aquí (ej. "52662XXXXXXX")
+      telefonoWhatsapp: ""
+    };
+
+    // =========================================================
+    // DESTELLOS AZUL REY, PLATA Y DORADO
+    // =========================================================
+    (function crearDestellos() {
+      const cont = document.getElementById('sparklesContainer');
+      for (let i = 0; i < 24; i++) {
+        const s = document.createElement('span');
+        s.className = 'sparkle';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.animationDuration = (7 + Math.random() * 8) + 's';
+        s.style.animationDelay = (Math.random() * 9) + 's';
+        const sz = 2.5 + Math.random() * 4.5;
+        s.style.width = sz + 'px';
+        s.style.height = sz + 'px';
+        if (i % 3 === 0) {
+          s.style.background = '#fef08a';
+          s.style.boxShadow = '0 0 8px #d4af37';
+        } else if (i % 2 === 0) {
+          s.style.background = '#93c5fd';
+          s.style.boxShadow = '0 0 8px #3b82f6';
+        }
+        cont.appendChild(s);
+      }
+    })();
+
+    // =========================================================
+    // APERTURA DEL SOBRE Y REPRODUCCIÓN DESDE QUE EMPIEZA A CANTAR
+    // =========================================================
+    const envelopeScreen = document.getElementById('envelopeScreen');
+    const bgAudio = document.getElementById('bgAudio');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicText = document.getElementById('musicText');
+    let playing = false;
+
+    
+    let audioBlobLoaded = false;
+    function asegurarAudioCargado() {
+      if (audioBlobLoaded) return;
+      audioBlobLoaded = true;
+      bgAudio.src = "musica.mp3";
+      bgAudio.load();
+    }
+
+    function actualizarBotonMusica() {
+      if (playing) {
+        musicBtn.classList.add('playing');
+        musicBtn.classList.remove('paused');
+        musicIcon.innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+        musicText.textContent = 'A Thousand Years · Sonando';
+      } else {
+        musicBtn.classList.remove('playing');
+        musicBtn.classList.add('paused');
+        musicIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+        musicText.textContent = 'Música: Pausada';
+      }
+    }
+
+    function reproducirMusica() {
+      asegurarAudioCargado();
+      bgAudio.volume = 0.85;
+      bgAudio.play().then(() => {
+        playing = true;
+        actualizarBotonMusica();
+      }).catch(() => {
+        playing = false;
+        actualizarBotonMusica();
+      });
+    }
+
+    function abrirSobre() {
+      if (envelopeScreen.classList.contains('opened')) return;
+      envelopeScreen.classList.add('opened');
+      document.body.classList.remove('locked');
+
+      reproducirMusica();
+
+      setTimeout(() => {
+        musicBtn.classList.add('show');
+      }, 650);
+
+      setTimeout(() => {
+        envelopeScreen.style.display = 'none';
+      }, 1450);
+    }
+
+    musicBtn.addEventListener('click', () => {
+      asegurarAudioCargado();
+      if (bgAudio.paused) {
+        bgAudio.play().then(() => {
+          playing = true;
+          actualizarBotonMusica();
+        });
+      } else {
+        bgAudio.pause();
+        playing = false;
+        actualizarBotonMusica();
+      }
+    });
+
+    // =========================================================
+    // CONTADOR REGRESIVO: 5 DE DICIEMBRE DE 2026, 6:00 PM
+    // =========================================================
+    const targetDate = new Date('2026-12-05T18:00:00-07:00').getTime();
+    function actualizarContador() {
+      const now = Date.now();
+      const diff = Math.max(0, targetDate - now);
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cdDays').textContent = String(d).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(m).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(s).padStart(2, '0');
+    }
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+
+    // =========================================================
+    // ANIMACIÓN REVEAL AL HACER SCROLL
+    // =========================================================
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+    // =========================================================
+    // CONFIRMACIÓN POR WHATSAPP
+    // =========================================================
+    document.getElementById('btnRsvp').addEventListener('click', () => {
+      const nameInput = document.getElementById('guestName');
+      const countSelect = document.getElementById('guestCount');
+      const nombre = nameInput.value.trim() || 'Invitado Especial';
+      const cantidad = countSelect.value;
+
+      const mensaje = `¡Hola! 💙👑 Quiero confirmar mi asistencia a los XV Años de *${CONFIG.quinceanera}* (Sábado 5 de Diciembre 2026).\n\n👤 *Nombre:* ${nombre}\n🎟️ *Confirmados:* ${cantidad}\n\n¡Muchas gracias por la invitación!`;
+      const encoded = encodeURIComponent(mensaje);
+      const url = CONFIG.telefonoWhatsapp
+        ? `https://wa.me/${CONFIG.telefonoWhatsapp}?text=${encoded}`
+        : `https://wa.me/?text=${encoded}`;
+
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
