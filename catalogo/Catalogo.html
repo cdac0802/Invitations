@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestro Menú • Invitaciones Digitales Personalizadas ✨</title>
+
+  <!-- Tipografías elegantes idénticas a tu imagen -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #061124;
+      --bg-card: rgba(10, 24, 49, 0.88);
+      --card-border: rgba(56, 126, 219, 0.42);
+      --card-border-glow: rgba(72, 182, 255, 0.6);
+      --ice-blue: #6cd5ff;
+      --cyan-bright: #38bdf8;
+      --deep-blue: #0b3678;
+      --navy-ribbon: #114294;
+      --text-white: #ffffff;
+      --text-soft: #c8ddf7;
+      --gold-accent: #ffd166;
+      --whatsapp-green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      background-image:
+        radial-gradient(circle at 50% 10%, rgba(30, 85, 170, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 10% 45%, rgba(14, 52, 114, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 90% 75%, rgba(18, 65, 140, 0.35) 0%, transparent 55%),
+        linear-gradient(180deg, #050e1d 0%, #08162d 100%);
+      color: var(--text-white);
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 14px 60px;
+      overflow-x: hidden;
+    }
+
+    .menu-page {
+      width: 100%;
+      max-width: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      position: relative;
+    }
+
+    /* =========================================================
+       ENCABEZADO IDÉNTICO AL FLYER DE INSTAGRAM
+       ========================================================= */
+    .header-banner {
+      position: relative;
+      padding: 10px 10px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .top-left-tag {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      text-align: left;
+    }
+
+    .top-left-tag .tag-text {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #93c5fd;
+      display: block;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    .top-right-script {
+      position: absolute;
+      top: -4px;
+      right: 8px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.65rem;
+      color: #38bdf8;
+      line-height: 1.1;
+      text-align: right;
+      transform: rotate(-3deg);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+    }
+
+    .top-right-script span {
+      display: block;
+    }
+
+    .top-star {
+      font-size: 1.7rem;
+      color: var(--ice-blue);
+      margin-bottom: 4px;
+      animation: pulseStar 2.5s infinite ease-in-out;
+      text-shadow: 0 0 15px rgba(108, 213, 255, 0.8);
+    }
+
+    @keyframes pulseStar {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+
+    .main-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: 5px;
+      line-height: 1;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .main-title .menu-word {
+      display: block;
+      color: var(--ice-blue);
+      font-weight: 900;
+      background: linear-gradient(180deg, #dcf2ff 0%, #6cd5ff 70%, #2997ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 18px rgba(72, 182, 255, 0.45));
+    }
+
+    .subtitle-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .subtitle-divider::before,
+    .subtitle-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.5), transparent);
+    }
+
+    .subtitle-text {
+      font-size: clamp(0.68rem, 1.8vw, 0.85rem);
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       GRILLA DE PAQUETES (3 ARRIBA Y 2 ABAJO COMO EN EL FLYER)
+       ========================================================= */
+    .menu-grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .menu-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 820px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Responsive en celulares */
+    @media (max-width: 850px) {
+      .menu-grid-top {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .menu-grid-bottom {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+      .top-left-tag {
+        position: static;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .top-right-script {
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+        transform: none;
+      }
+      .subtitle-divider {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* =========================================================
+       TARJETA INDIVIDUAL DE PAQUETE
+       ========================================================= */
+    .menu-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(18, 54, 120, 0.25) inset;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-border-glow);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(72, 182, 255, 0.35);
+    }
+
+    /* Encabezado de la tarjeta: Número a la izquierda y Listón de Precio a la derecha */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .card-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #93c5fd;
+      letter-spacing: 1px;
+    }
+
+    /* Listón de precio estilizado como el flyer */
+    .price-ribbon {
+      background: linear-gradient(135deg, #1d4ed8, #0e377e);
+      color: #ffffff;
+      padding: 6px 18px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      border-radius: 6px;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+      letter-spacing: 1px;
+    }
+
+    .price-ribbon.premium {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow:
+        0 4px 16px rgba(37, 99, 235, 0.5),
+        0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Título del paquete */
+    .package-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .package-type {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #7dd3fc;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Mockup visual estilizado en CSS/SVG para representar celular/laptop */
+    .mockup-container {
+      width: 100%;
+      height: 155px;
+      background: radial-gradient(circle at 50% 40%, rgba(18, 54, 120, 0.5), rgba(4, 14, 30, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Estilo de celular en miniatura */
+    .mini-phone {
+      width: 80px;
+      height: 140px;
+      border: 2px solid #64748b;
+      border-radius: 12px;
+      background: #0b1a33;
+      padding: 6px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .mini-phone.cream-theme {
+      background: #fdfcf7;
+      color: #27272a;
+      border-color: #d4d4d8;
+    }
+
+    .mini-phone-text {
+      font-size: 0.45rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .mini-btn {
+      margin-top: 6px;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.38rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      width: 90%;
+    }
+
+    .mini-btn.location {
+      background: #1e3a8a;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-top: 2px;
+    }
+
+    .mini-play-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1.5px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin: 4px 0;
+      color: #fff;
+    }
+
+    /* Estilo de laptop en miniatura para el paquete $250 */
+    .mini-laptop {
+      width: 170px;
+      height: 110px;
+      border: 2px solid #94a3b8;
+      border-radius: 8px 8px 2px 2px;
+      background: #09172f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .mini-laptop::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      width: 200px;
+      height: 6px;
+      background: #64748b;
+      border-radius: 0 0 6px 6px;
+    }
+
+    /* Lista de beneficios con palomitas */
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .features-list li {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .check-icon {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 1.5px solid var(--cyan-bright);
+      color: var(--cyan-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Frases manuscritas cursivas abajo de cada tarjeta (como en el flyer) */
+    .card-cursive-note {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      color: #7dd3fc;
+      text-align: center;
+      margin-top: auto;
+      padding-top: 8px;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+    }
+
+    /* =========================================================
+       BOTONES DE ACCIÓN (Ver Muestra en Vivo y Pedir por WhatsApp)
+       ========================================================= */
+    .btn-action-primary {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-action-primary:active {
+      transform: scale(0.97);
+    }
+
+    .btn-live-pink {
+      background: linear-gradient(135deg, #ff2a85, #b537f2);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 42, 133, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-live-blue {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      box-shadow: 0 0 22px rgba(37, 99, 235, 0.55);
+      border: 1px solid rgba(147, 197, 253, 0.5);
+    }
+
+    .btn-live-emerald {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: #fff;
+      box-shadow: 0 0 22px rgba(5, 150, 105, 0.55);
+      border: 1px solid rgba(167, 243, 208, 0.5);
+    }
+
+    .btn-live-gold {
+      background: linear-gradient(135deg, #c9a227, #8a6a1f);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(201, 162, 39, 0.55);
+      border: 1px solid rgba(246, 231, 168, 0.6);
+      text-shadow: 0 1px 2px rgba(60, 45, 10, 0.5);
+    }
+
+    .btn-live-wedding {
+      background: linear-gradient(135deg, #881337, #b8860b);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(184, 134, 11, 0.5);
+      border: 1px solid rgba(254, 243, 199, 0.6);
+      text-shadow: 0 1px 2px rgba(40, 20, 20, 0.5);
+    }
+
+    .btn-whatsapp-order {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-preview-img {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #fff;
+      font-size: 0.88rem;
+      box-shadow: 0 0 18px rgba(124, 58, 237, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      margin-bottom: 8px;
+    }
+
+    .mini-phone.img-preview-phone {
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      border-color: #a855f7;
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.45);
+      transition: transform 0.2s ease;
+    }
+
+    .mini-phone.img-preview-phone:hover {
+      transform: scale(1.06);
+    }
+
+    .mini-phone.img-preview-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Modal / Lightbox para ver la muestra de $50 en pantalla completa */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(4, 10, 24, 0.92);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .lightbox-modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 420px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      max-height: 78dvh;
+      object-fit: contain;
+      border-radius: 18px;
+      border: 2px solid rgba(168, 85, 247, 0.65);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.5);
+    }
+
+    .btn-close-lightbox {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    /* Contenedor interactivo para la muestra de $100 con botones reales sobre la tarjeta */
+    .interactive-100-frame {
+      position: relative;
+      width: 100%;
+      max-width: 390px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(56, 189, 248, 0.7);
+      box-shadow: 0 0 35px rgba(37, 99, 235, 0.55);
+    }
+
+    .interactive-100-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .hotspot-btn-100 {
+      position: absolute;
+      bottom: 5.3%;
+      height: 7.7%;
+      border-radius: 999px;
+      cursor: pointer;
+      background: rgba(56, 189, 248, 0.12);
+      border: 2px solid rgba(108, 213, 255, 0.85);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.65);
+      animation: pulseHotspot 1.8s infinite ease-in-out;
+      text-decoration: none;
+    }
+
+    .hotspot-whatsapp {
+      left: 15.8%;
+      width: 33.1%;
+    }
+
+    .hotspot-location {
+      left: 50.8%;
+      width: 36.5%;
+    }
+
+    @keyframes pulseHotspot {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 12px rgba(56, 189, 248, 0.55); }
+      50% { transform: scale(1.03); box-shadow: 0 0 22px rgba(255, 255, 255, 0.9); }
+    }
+
+    /* Selector de muestras en el modal de $50 */
+    .sample-switcher {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .sample-tab-btn {
+      flex: 1 1 auto;
+      min-width: 90px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(147, 197, 253, 0.4);
+      background: rgba(15, 32, 66, 0.8);
+      color: #bae6fd;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .sample-tab-btn.active {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #ffffff;
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.55);
+    }
+
+    /* Marco de video para la muestra de $200 */
+    .video-200-frame {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(244, 114, 182, 0.75);
+      box-shadow: 0 0 35px rgba(236, 72, 153, 0.5);
+      background: #000;
+    }
+
+    .video-200-frame video {
+      width: 100%;
+      max-height: 72dvh;
+      display: block;
+    }
+
+    /* =========================================================
+       PIE DE PÁGINA IDÉNTICO AL FLYER (3 BENEFICIOS)
+       ========================================================= */
+    .footer-badges-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 24px 20px;
+      background: rgba(10, 24, 49, 0.7);
+      border: 1px solid rgba(56, 126, 219, 0.35);
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .badge-icon {
+      font-size: 1.6rem;
+      color: #38bdf8;
+    }
+
+    .badge-content h4 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .badge-content p {
+      font-size: 0.72rem;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .footer-signature-script {
+      font-family: 'Caveat', cursive;
+      font-size: 1.7rem;
+      color: #60cdff;
+      text-align: right;
+      padding-right: 12px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-page">
+
+    <!-- =========================================================
+         ENCABEZADO
+         ========================================================= -->
+    <header class="header-banner">
+      <div class="top-left-tag">
+        <span class="tag-text">Invitaciones Digitales</span>
+      </div>
+
+      <div class="top-right-script">
+        <span>Personalizadas</span>
+        <span>Creativas</span>
+        <span>Digitales</span>
+      </div>
+
+      <div class="top-star">✦</div>
+      <h1 class="main-title">
+        NUESTRO
+        <span class="menu-word">MENÚ</span>
+      </h1>
+
+      <div class="subtitle-divider">
+        <span class="subtitle-text">Ideas que hacen especiales tus momentos</span>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         FILA SUPERIOR: PAQUETES 01, 02 Y 03
+         ========================================================= -->
+    <div class="menu-grid-top">
+
+      <!-- 01: INVITACIÓN NORMAL ($50) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">01</span>
+          <div class="price-ribbon">$50</div>
+        </div>
+
+        <h2 class="package-name">Invitación Normal</h2>
+        <span class="package-type">Personalizada</span>
+
+        <div class="mockup-container" style="gap: 8px;">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('brianna')" title="Toca para ver muestra Cumpleaños Brianna ($50)" style="width:72px; height:136px;">
+            <img id="thumbMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna" loading="lazy" />
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ximena')" title="Toca para ver muestra XV Ximena sin botones ($50)" style="width:72px; height:136px; border-color:#60a5fa; box-shadow:0 0 16px rgba(96,165,250,0.45);">
+            <img id="thumbMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" loading="lazy" />
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('babyshower')" title="Toca para ver muestra Baby Shower Mariel ($50)" style="width:72px; height:136px; border-color:#fbbf24; box-shadow:0 0 16px rgba(251,191,36,0.45);">
+            <img id="thumbMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" loading="lazy" />
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('roblox')" title="Toca para ver muestra Infantil Roblox Ricardo ($50)" style="width:72px; height:136px; border-color:#ef4444; box-shadow:0 0 16px rgba(239,68,68,0.45);">
+            <img id="thumbMuestra50Roblox" src="ejemplo-50-roblox.jpg" alt="Muestra Invitación $50 Infantil Roblox" loading="lazy" />
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (con tu temática, colores y estilo)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Imagen en alta calidad</strong> (formato digital JPG)</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Simple, bonita y especial</div>
+
+        <button type="button" onclick="abrirMuestraImagen('brianna')" class="btn-action-primary btn-preview-img">
+          🖼️ Ver Muestras ($50)
+        </button>
+
+        <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$50%20(Invitaci%C3%B3n%20Normal%20Personalizada)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+      <!-- 02: INVITACIÓN CON BOTONES ($100) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">02</span>
+          <div class="price-ribbon">$100</div>
+        </div>
+
+        <h2 class="package-name">Invitación Normal</h2>
+        <span class="package-type">Con Botones</span>
+
+        <div class="mockup-container">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestra100()" title="Toca para probar la muestra de $100 con botones" style="border-color:#38bdf8; box-shadow:0 0 16px rgba(56,189,248,0.45);">
+            <img id="thumbMuestra100" src="ejemplo-100.jpg" alt="Muestra Invitación $100 XV Ximena Con Botones" loading="lazy" />
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón de confirmar asistencia</strong> vía WhatsApp</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón para ver ubicación</strong> en Google Maps</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Todo en un solo clic</div>
+
+        <button type="button" onclick="abrirMuestra100()" class="btn-action-primary btn-live-blue" style="margin-bottom: 8px;">
+          📄 Ver Muestra Interactiva ($100)
+        </button>
+
+        <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$100%20(Invitaci%C3%B3n%20Con%20Botones%20Interactivos)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+      <!-- 03: INVITACIÓN DIGITAL ANIMADA ($200) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">03</span>
+          <div class="price-ribbon">$200</div>
+        </div>
+
+        <h2 class="package-name">Invitación Digital</h2>
+        <span class="package-type">Animada + Video</span>
+
+        <div class="mockup-container" style="gap: 10px;">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestra200('esmeralda')" title="Toca para ver video animado XV Esmeralda ($200)" style="width:78px; height:140px; position:relative; border-color:#10b981; box-shadow:0 0 16px rgba(16,185,129,0.5);">
+            <img src="portada-esmeralda-video.jpg" alt="Vista previa Video Animado 60fps XV Esmeralda" style="filter: brightness(0.85);" loading="lazy" />
+            <div class="mini-play-icon" style="position:absolute; inset:0; margin:auto;">▶</div>
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestra200('brianna')" title="Toca para ver video animado Brianna K-Pop ($200)" style="width:78px; height:140px; position:relative; border-color:#ec4899; box-shadow:0 0 16px rgba(236,72,153,0.5);">
+            <img src="ejemplo-50.jpg" alt="Vista previa Video Animado K-Pop Brianna" style="filter: brightness(0.75);" loading="lazy" />
+            <div class="mini-play-icon" style="position:absolute; inset:0; margin:auto;">▶</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (con temática, colores y estilo)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Detalles del evento</strong> y de la temática</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Video animado</strong> (aprox. 20 seg con música y efectos)</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Una experiencia que se disfruta</div>
+
+        <button type="button" onclick="abrirMuestra200('esmeralda')" class="btn-action-primary btn-live-pink" style="margin-bottom: 8px;">
+          🎬 Ver Videos de Muestra ($200)
+        </button>
+
+        <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         FILA INFERIOR: PAQUETES 04 Y 05 (LAS WEBS CON DEMO EN VIVO)
+         ========================================================= -->
+    <div class="menu-grid-bottom">
+
+      <!-- 04: MINI PÁGINA WEB ($250) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">04</span>
+          <div class="price-ribbon premium">$250</div>
+        </div>
+
+        <h2 class="package-name">Invitación en</h2>
+        <span class="package-type">Mini Página Web</span>
+
+        <div class="mockup-container">
+          <div class="mini-laptop">
+            <span style="font-size:0.55rem; font-weight:700; color:#38bdf8; margin-bottom:4px;">Estás invitado</span>
+            <div style="display:flex; gap:4px; width:80%;">
+              <div class="mini-btn" style="font-size:0.32rem;">Confirmar</div>
+              <div class="mini-btn location" style="font-size:0.32rem;">Ubicación</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora y lugar)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Detalles del evento</strong> y de la temática</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Video animado</strong> (integrado directamente en la página con sonido)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón de confirmar asistencia</strong> vía WhatsApp</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Botón para ver ubicación</strong> en Google Maps</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Todo en un solo lugar + video integrado</div>
+
+        <!-- Botón que abre la muestra en vivo de Brianna sin error 404 -->
+        <a href="/Invitations/brianna/" onclick="abrirMuestra('brianna'); return false;" class="btn-action-primary btn-live-pink" style="margin-bottom: 8px;">
+          ▶️ Ver Muestra en Vivo (Cumpleaños Brianna)
+        </a>
+
+        <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$250%20(Mini%20P%C3%A1gina%20Web%20con%20Video)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+      <!-- 05: PÁGINA WEB COMPLETA ($300) -->
+      <div class="menu-card">
+        <div class="card-header">
+          <span class="card-num">05</span>
+          <div class="price-ribbon premium">$300</div>
+        </div>
+
+        <h2 class="package-name">Invitación en</h2>
+        <span class="package-type">Página Web Interactiva</span>
+
+        <div class="mockup-container" style="gap: 6px; overflow-x: auto; padding: 4px 6px;">
+          <!-- Muestra 1: XV Años Formal -->
+          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#93c5fd; letter-spacing:0.5px;">XV Azul</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.54rem; color:#fff; font-weight:700;">Ximena</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem;">Confirmar</div>
+            <div class="mini-btn location" style="font-size:0.28rem;">Ubicación</div>
+          </div>
+          <!-- Muestra 2: XV Años Esmeralda -->
+          <div class="mini-phone" onclick="abrirMuestra('esmeralda-xv')" title="Toca para ver muestra XV Años Esmeralda" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #064e3b, #022c22); border-color:#10b981; box-shadow:0 0 14px rgba(16,185,129,0.4); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#a7f3d0; letter-spacing:0.5px;">XV Verde</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.54rem; color:#fde047; font-weight:700; line-height:1.1; margin:2px 0;">Esmeralda</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#059669; color:#fff; border-color:#34d399;">Sobre 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(212,175,55,0.25); color:#fde047; border-color:#eab308;">Música</div>
+          </div>
+          <!-- Muestra 3: Velación San Judas -->
+          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 14px rgba(212,175,55,0.4); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#8a6a1f; font-weight:700; letter-spacing:0.5px;">Velación</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.48rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#c9a227; color:#fff;">Puertas 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">GPS</div>
+          </div>
+          <!-- Muestra 4: Boda Alejandro y Cecilia -->
+          <div class="mini-phone" onclick="abrirMuestra('alejandro-y-cecilia')" title="Toca para ver muestra Boda Alejandro y Cecilia" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #fffaf5, #f5ebe1); border-color:#c5a880; box-shadow:0 0 14px rgba(197,168,128,0.5); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#926839; font-weight:700; letter-spacing:0.5px;">Boda</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.46rem; color:#4a3728; font-weight:700; line-height:1.1; margin:2px 0;">Alejandro &amp; Cecilia</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#881337; color:#fff; border-color:#d4af37;">Sobre 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(146,104,57,0.2); color:#664923; border-color:#c5a880;">Música</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Diseño personalizado</strong> (XV Años, Bodas, Bautizos, Velaciones)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Datos del evento</strong> (fecha, hora, lugar y programa)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Apertura interactiva</strong> (Sobre 3D o Puertas de Capilla 3D)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Música de fondo con reproductor</strong> (activar/pausar a tu gusto)</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Croquis ilustrado y mapa GPS</strong> con enlace a Google Maps</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span><strong>Página web completa</strong> con fotos de invitados/grupo, logo y agradecimiento</span>
+          </li>
+        </ul>
+
+        <div class="card-cursive-note">Tu invitación, como una página especial</div>
+
+        <!-- Botón Muestra 1: XV Años Ximena -->
+        <a href="/Invitations/xv-ximena/" onclick="abrirMuestra('xv-ximena'); return false;" class="btn-action-primary btn-live-blue" style="margin-bottom: 8px;">
+          ✉️ Ver Muestra en Vivo (XV Años Azul - Ximena)
+        </a>
+
+        <!-- Botón Muestra 2: XV Años Esmeralda -->
+        <a href="/Invitations/esmeralda-xv/" onclick="abrirMuestra('esmeralda-xv'); return false;" class="btn-action-primary btn-live-emerald" style="margin-bottom: 8px;">
+          👑 Ver Muestra en Vivo (XV Años Verde Esmeralda)
+        </a>
+
+        <!-- Botón Muestra 3: Velación San Judas Tadeo -->
+        <a href="/Invitations/san-judas/" onclick="abrirMuestra('san-judas'); return false;" class="btn-action-primary btn-live-gold" style="margin-bottom: 8px;">
+          🙏 Ver Muestra en Vivo (San Judas Tadeo)
+        </a>
+
+        <!-- Botón Muestra 4: Boda Alejandro y Cecilia -->
+        <a href="/Invitations/alejandro-y-cecilia/" onclick="abrirMuestra('alejandro-y-cecilia'); return false;" class="btn-action-primary btn-live-wedding" style="margin-bottom: 8px;">
+          💍 Ver Muestra en Vivo (Boda Elegante - Alejandro y Cecilia)
+        </a>
+
+        <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$300%20(P%C3%A1gina%20Web%20Interactiva)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
+          💬 Pedir por WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         PIE DE PÁGINA (LOS 3 BENEFICIOS DEL FLYER)
+         ========================================================= -->
+    <div class="footer-badges-container">
+      <div class="badge-item">
+        <div class="badge-icon">🕒</div>
+        <div class="badge-content">
+          <h4>100% Personalizadas</h4>
+          <p>(Tu idea, nuestro diseño)</p>
+        </div>
+      </div>
+
+      <div class="badge-item">
+        <div class="badge-icon">✏️</div>
+        <div class="badge-content">
+          <h4>Diseño Creativo</h4>
+          <p>(Estilo único)</p>
+        </div>
+      </div>
+
+      <div class="badge-item">
+        <div class="badge-icon">📱</div>
+        <div class="badge-content">
+          <h4>Entrega Digital</h4>
+          <p>(Rápida y segura)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-signature-script">
+      Haz de tu evento algo inolvidable ✨
+    </div>
+
+  </div>
+
+  <!-- Modal Pantalla Completa para ver las Muestras de $50 (Brianna y XV Ximena sin botones) -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="cerrarMuestraImagen(event)">
+    <div class="lightbox-content">
+      <div class="sample-switcher">
+        <button type="button" id="tab50Brianna" class="sample-tab-btn active" onclick="cambiarMuestra50('brianna')">
+          🎂 Cumpleaños Brianna
+        </button>
+        <button type="button" id="tab50Ximena" class="sample-tab-btn" onclick="cambiarMuestra50('ximena')">
+          👑 XV Años Ximena
+        </button>
+        <button type="button" id="tab50BabyShower" class="sample-tab-btn" onclick="cambiarMuestra50('babyshower')">
+          🐝 Baby Shower Mariel
+        </button>
+        <button type="button" id="tab50Roblox" class="sample-tab-btn" onclick="cambiarMuestra50('roblox')">
+          🎮 Roblox Infantil
+        </button>
+      </div>
+      <img id="fullMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna K-Pop Demon Hunters" />
+      <img id="fullMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" style="display:none; border-color:rgba(96, 165, 250, 0.75); box-shadow:0 0 35px rgba(59, 130, 246, 0.5);" />
+      <img id="fullMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" style="display:none; border-color:rgba(251, 191, 36, 0.75); box-shadow:0 0 35px rgba(245, 158, 11, 0.5);" />
+      <img id="fullMuestra50Roblox" src="ejemplo-50-roblox.jpg" alt="Muestra Invitación $50 Infantil Roblox Ricardo Javier" style="display:none; border-color:rgba(239, 68, 68, 0.75); box-shadow:0 0 35px rgba(239, 68, 68, 0.5);" />
+      <div style="display:flex; gap:10px; width:100%;">
+        <a href="https://wa.me/526623355306?text=Hola,%20vi%20las%20muestras%20de%20$50%20y%20me%20interesa%20el%20paquete%20de%20Invitaci%C3%B3n%20Normal%20Personalizada" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
+          💬 Pedir por WhatsApp ($50)
+        </a>
+        <button type="button" class="btn-close-lightbox" onclick="cerrarMuestraImagen()">
+          ✕ Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Interactivo para ver y probar la Muestra de $100 (PDF con Botones) -->
+  <div class="lightbox-modal" id="lightboxModal100" onclick="cerrarMuestra100(event)">
+    <div class="lightbox-content">
+      <div style="font-size:0.82rem; color:#bae6fd; font-weight:700; text-align:center;">
+        ✨ ¡Prueba tocar los botones de "Confirmar" o "Ver Ubicación" en la invitación! ✨
+      </div>
+      <div class="interactive-100-frame">
+        <img id="fullMuestra100" src="ejemplo-100.jpg" alt="Muestra Invitación $100 XV Ximena Con Botones" />
+        <!-- Botón 1 de muestra del PDF: Confirmar Asistencia (desenlazado del número de ventas) -->
+        <a
+          href="https://wa.me/?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Ximena"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hotspot-btn-100 hotspot-whatsapp"
+          title="Confirmar Asistencia por WhatsApp (Muestra)"
+          aria-label="Confirmar Asistencia"
+        ></a>
+        <!-- Botón 2 real del PDF: Ver Ubicación -->
+        <a
+          href="https://maps.app.goo.gl/UbeXaKAKrcPvrtL39"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hotspot-btn-100 hotspot-location"
+          title="Ver Ubicación en Google Maps"
+          aria-label="Ver Ubicación"
+        ></a>
+      </div>
+      <div style="display:flex; gap:10px; width:100%;">
+        <a href="https://wa.me/526623355306?text=Hola,%20vi%20la%20muestra%20de%20Ximena%20y%20me%20interesa%20el%20paquete%20de%20$100%20con%20botones" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
+          💬 Pedir Paquete ($100)
+        </a>
+        <button type="button" class="btn-close-lightbox" onclick="cerrarMuestra100()">
+          ✕ Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para reproducir el Video de Muestra del Paquete de $200 -->
+  <div class="lightbox-modal" id="lightboxModal200" onclick="cerrarMuestra200(event)">
+    <div class="lightbox-content">
+      <div style="font-size:0.84rem; color:#fbcfe8; font-weight:700; text-align:center;">
+        🎬 Muestras de Video Animado ($200)
+      </div>
+
+      <!-- Selector de video -->
+      <div class="sample-switcher" style="margin-bottom: 6px;">
+        <button type="button" class="sample-tab-btn active" id="tabVideoEsmeralda" onclick="cambiarVideo200('esmeralda')">👑 XV Esmeralda (60 fps)</button>
+        <button type="button" class="sample-tab-btn" id="tabVideoBrianna" onclick="cambiarVideo200('brianna')">🎤 K-Pop Brianna</button>
+      </div>
+
+      <div class="video-200-frame">
+        <video id="videoMuestra200" src="video-esmeralda-60fps.mp4" controls playsinline preload="auto"></video>
+      </div>
+      <div style="display:flex; gap:10px; width:100%;">
+        <a id="btnWhatsapp200" href="https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20XV%20Esmeralda%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
+          💬 Pedir Paquete ($200)
+        </a>
+        <button type="button" class="btn-close-lightbox" onclick="cerrarMuestra200()">
+          ✕ Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script inteligente de navegación para GitHub Pages y local -->
+  <script>
+    function cambiarMuestra50(cual) {
+      const imgBrianna = document.getElementById('fullMuestra50');
+      const imgXimena = document.getElementById('fullMuestra50Ximena');
+      const imgBabyShower = document.getElementById('fullMuestra50BabyShower');
+      const imgRoblox = document.getElementById('fullMuestra50Roblox');
+      const tabBrianna = document.getElementById('tab50Brianna');
+      const tabXimena = document.getElementById('tab50Ximena');
+      const tabBabyShower = document.getElementById('tab50BabyShower');
+      const tabRoblox = document.getElementById('tab50Roblox');
+
+      imgBrianna.style.display = 'none';
+      imgXimena.style.display = 'none';
+      if (imgBabyShower) imgBabyShower.style.display = 'none';
+      if (imgRoblox) imgRoblox.style.display = 'none';
+
+      tabBrianna.classList.remove('active');
+      tabXimena.classList.remove('active');
+      if (tabBabyShower) tabBabyShower.classList.remove('active');
+      if (tabRoblox) tabRoblox.classList.remove('active');
+
+      if (cual === 'ximena') {
+        imgXimena.style.display = 'block';
+        tabXimena.classList.add('active');
+      } else if (cual === 'babyshower') {
+        if (imgBabyShower) imgBabyShower.style.display = 'block';
+        if (tabBabyShower) tabBabyShower.classList.add('active');
+      } else if (cual === 'roblox') {
+        if (imgRoblox) imgRoblox.style.display = 'block';
+        if (tabRoblox) tabRoblox.classList.add('active');
+      } else {
+        imgBrianna.style.display = 'block';
+        tabBrianna.classList.add('active');
+      }
+    }
+
+    function abrirMuestraImagen(cual) {
+      cambiarMuestra50(cual || 'brianna');
+      document.getElementById('lightboxModal').classList.add('open');
+    }
+
+    function cerrarMuestraImagen(e) {
+      if (!e || e.target.id === 'lightboxModal' || e.target.classList.contains('btn-close-lightbox')) {
+        document.getElementById('lightboxModal').classList.remove('open');
+      }
+    }
+
+    function abrirMuestra100() {
+      document.getElementById('lightboxModal100').classList.add('open');
+    }
+
+    function cerrarMuestra100(e) {
+      if (!e || e.target.id === 'lightboxModal100' || e.target.classList.contains('btn-close-lightbox')) {
+        document.getElementById('lightboxModal100').classList.remove('open');
+      }
+    }
+
+    function cambiarVideo200(cual) {
+      const vid = document.getElementById('videoMuestra200');
+      const tabEsme = document.getElementById('tabVideoEsmeralda');
+      const tabBri = document.getElementById('tabVideoBrianna');
+      const btnWa = document.getElementById('btnWhatsapp200');
+
+      if (cual === 'esmeralda') {
+        if (tabEsme) tabEsme.classList.add('active');
+        if (tabBri) tabBri.classList.remove('active');
+        if (vid) {
+          vid.src = 'video-esmeralda-60fps.mp4';
+          vid.currentTime = 0;
+          vid.play().catch(function() {});
+        }
+        if (btnWa) {
+          btnWa.href = 'https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20XV%20Esmeralda%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)';
+        }
+      } else {
+        if (tabBri) tabBri.classList.add('active');
+        if (tabEsme) tabEsme.classList.remove('active');
+        if (vid) {
+          vid.src = 'video-muestra-200.mp4';
+          vid.currentTime = 0;
+          vid.play().catch(function() {});
+        }
+        if (btnWa) {
+          btnWa.href = 'https://wa.me/526623355306?text=Hola,%20vi%20el%20video%20de%20muestra%20de%20Brianna%20y%20me%20interesa%20el%20paquete%20de%20$200%20(Video%20Animado)';
+        }
+      }
+    }
+
+    function abrirMuestra200(cual) {
+      const modal = document.getElementById('lightboxModal200');
+      modal.classList.add('open');
+      cambiarVideo200(cual || 'esmeralda');
+    }
+
+    function cerrarMuestra200(e) {
+      if (!e || e.target.id === 'lightboxModal200' || e.target.classList.contains('btn-close-lightbox')) {
+        const vid = document.getElementById('videoMuestra200');
+        if (vid) vid.pause();
+        document.getElementById('lightboxModal200').classList.remove('open');
+      }
+    }
+
+    function abrirMuestra(carpeta) {
+      if (window.location.hostname.includes('github.io')) {
+        window.location.href = '/Invitations/' + carpeta + '/';
+      } else {
+        const path = window.location.pathname;
+        if (path.includes('/catalogo/')) {
+          window.location.href = '../' + carpeta + '/index.html';
+        } else {
+          window.location.href = './' + carpeta + '/index.html';
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>
+
+
+

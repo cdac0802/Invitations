@@ -482,12 +482,27 @@
       border: 1px solid rgba(147, 197, 253, 0.5);
     }
 
+    .btn-live-emerald {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: #fff;
+      box-shadow: 0 0 22px rgba(5, 150, 105, 0.55);
+      border: 1px solid rgba(167, 243, 208, 0.5);
+    }
+
     .btn-live-gold {
       background: linear-gradient(135deg, #c9a227, #8a6a1f);
       color: #ffffff;
       box-shadow: 0 0 22px rgba(201, 162, 39, 0.55);
       border: 1px solid rgba(246, 231, 168, 0.6);
       text-shadow: 0 1px 2px rgba(60, 45, 10, 0.5);
+    }
+
+    .btn-live-wedding {
+      background: linear-gradient(135deg, #881337, #b8860b);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(184, 134, 11, 0.5);
+      border: 1px solid rgba(254, 243, 199, 0.6);
+      text-shadow: 0 1px 2px rgba(40, 20, 20, 0.5);
     }
 
     .btn-whatsapp-order {
@@ -990,27 +1005,34 @@
         <h2 class="package-name">Invitación en</h2>
         <span class="package-type">Página Web Interactiva</span>
 
-        <div class="mockup-container" style="gap: 8px;">
+        <div class="mockup-container" style="gap: 6px; overflow-x: auto; padding: 4px 6px;">
           <!-- Muestra 1: XV Años Formal -->
-          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:72px; height:136px; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
-            <div style="font-size:0.36rem; color:#93c5fd; letter-spacing:0.5px;">XV Azul</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.58rem; color:#fff; font-weight:700;">Ximena</div>
-            <div class="mini-btn" style="margin-top:6px; font-size:0.3rem;">Confirmar</div>
-            <div class="mini-btn location" style="font-size:0.3rem;">Ubicación</div>
+          <div class="mini-phone" onclick="abrirMuestra('xv-ximena')" title="Toca para ver muestra XV Años Ximena" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #1e3a8a, #0a192f); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#93c5fd; letter-spacing:0.5px;">XV Azul</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.54rem; color:#fff; font-weight:700;">Ximena</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem;">Confirmar</div>
+            <div class="mini-btn location" style="font-size:0.28rem;">Ubicación</div>
           </div>
           <!-- Muestra 2: XV Años Esmeralda -->
-          <div class="mini-phone" onclick="abrirMuestra('esmeralda-xv')" title="Toca para ver muestra XV Años Esmeralda" style="width:72px; height:136px; background:linear-gradient(180deg, #064e3b, #022c22); border-color:#10b981; box-shadow:0 0 14px rgba(16,185,129,0.4); cursor:pointer;">
-            <div style="font-size:0.36rem; color:#a7f3d0; letter-spacing:0.5px;">XV Verde</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.58rem; color:#fde047; font-weight:700; line-height:1.1; margin:2px 0;">Esmeralda</div>
-            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem; background:#059669; color:#fff; border-color:#34d399;">Sobre 3D</div>
-            <div class="mini-btn location" style="font-size:0.28rem; background:rgba(212,175,55,0.25); color:#fde047; border-color:#eab308;">Música</div>
+          <div class="mini-phone" onclick="abrirMuestra('esmeralda-xv')" title="Toca para ver muestra XV Años Esmeralda" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #064e3b, #022c22); border-color:#10b981; box-shadow:0 0 14px rgba(16,185,129,0.4); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#a7f3d0; letter-spacing:0.5px;">XV Verde</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.54rem; color:#fde047; font-weight:700; line-height:1.1; margin:2px 0;">Esmeralda</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#059669; color:#fff; border-color:#34d399;">Sobre 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(212,175,55,0.25); color:#fde047; border-color:#eab308;">Música</div>
           </div>
           <!-- Muestra 3: Velación San Judas -->
-          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:72px; height:136px; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 14px rgba(212,175,55,0.4); cursor:pointer;">
-            <div style="font-size:0.36rem; color:#8a6a1f; font-weight:700; letter-spacing:0.5px;">Velación</div>
-            <div style="font-family:'Playfair Display', serif; font-size:0.52rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
-            <div class="mini-btn" style="margin-top:6px; font-size:0.28rem; background:#c9a227; color:#fff;">Puertas 3D</div>
-            <div class="mini-btn location" style="font-size:0.28rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">GPS</div>
+          <div class="mini-phone" onclick="abrirMuestra('san-judas')" title="Toca para ver muestra Velación San Judas Tadeo" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #fdf8eb, #e8d48a); border-color:#d4af37; box-shadow:0 0 14px rgba(212,175,55,0.4); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#8a6a1f; font-weight:700; letter-spacing:0.5px;">Velación</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.48rem; color:#5a410a; font-weight:700; line-height:1.1; margin:2px 0;">San Judas</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#c9a227; color:#fff;">Puertas 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(138,106,31,0.2); color:#5a410a; border-color:#8a6a1f;">GPS</div>
+          </div>
+          <!-- Muestra 4: Boda Alejandro y Cecilia -->
+          <div class="mini-phone" onclick="abrirMuestra('alejandro-y-cecilia')" title="Toca para ver muestra Boda Alejandro y Cecilia" style="width:66px; height:136px; flex-shrink:0; background:linear-gradient(180deg, #fffaf5, #f5ebe1); border-color:#c5a880; box-shadow:0 0 14px rgba(197,168,128,0.5); cursor:pointer;">
+            <div style="font-size:0.34rem; color:#926839; font-weight:700; letter-spacing:0.5px;">Boda</div>
+            <div style="font-family:'Playfair Display', serif; font-size:0.46rem; color:#4a3728; font-weight:700; line-height:1.1; margin:2px 0;">Alejandro &amp; Cecilia</div>
+            <div class="mini-btn" style="margin-top:6px; font-size:0.26rem; background:#881337; color:#fff; border-color:#d4af37;">Sobre 3D</div>
+            <div class="mini-btn location" style="font-size:0.26rem; background:rgba(146,104,57,0.2); color:#664923; border-color:#c5a880;">Música</div>
           </div>
         </div>
 
@@ -1056,6 +1078,11 @@
         <!-- Botón Muestra 3: Velación San Judas Tadeo -->
         <a href="/Invitations/san-judas/" onclick="abrirMuestra('san-judas'); return false;" class="btn-action-primary btn-live-gold" style="margin-bottom: 8px;">
           🙏 Ver Muestra en Vivo (San Judas Tadeo)
+        </a>
+
+        <!-- Botón Muestra 4: Boda Alejandro y Cecilia -->
+        <a href="/Invitations/alejandro-y-cecilia/" onclick="abrirMuestra('alejandro-y-cecilia'); return false;" class="btn-action-primary btn-live-wedding" style="margin-bottom: 8px;">
+          💍 Ver Muestra en Vivo (Boda Elegante - Alejandro y Cecilia)
         </a>
 
         <a href="https://wa.me/526623355306?text=Hola,%20me%20interesa%20el%20paquete%20de%20$300%20(P%C3%A1gina%20Web%20Interactiva)" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order">
