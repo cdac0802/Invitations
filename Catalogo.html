@@ -791,18 +791,21 @@
         <h2 class="package-name">Invitación Normal</h2>
         <span class="package-type">Personalizada</span>
 
-        <div class="mockup-container" style="gap: 8px;">
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('brianna')" title="Toca para ver muestra Cumpleaños Brianna ($50)" style="width:72px; height:136px;">
+        <div class="mockup-container" style="gap: 6px; overflow-x: auto; padding: 4px 6px;">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('brianna')" title="Toca para ver muestra Cumpleaños Brianna ($50)" style="width:66px; height:136px; flex-shrink:0;">
             <img id="thumbMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna" loading="lazy" />
           </div>
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ximena')" title="Toca para ver muestra XV Ximena sin botones ($50)" style="width:72px; height:136px; border-color:#60a5fa; box-shadow:0 0 16px rgba(96,165,250,0.45);">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ximena')" title="Toca para ver muestra XV Ximena sin botones ($50)" style="width:66px; height:136px; flex-shrink:0; border-color:#60a5fa; box-shadow:0 0 16px rgba(96,165,250,0.45);">
             <img id="thumbMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" loading="lazy" />
           </div>
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('babyshower')" title="Toca para ver muestra Baby Shower Mariel ($50)" style="width:72px; height:136px; border-color:#fbbf24; box-shadow:0 0 16px rgba(251,191,36,0.45);">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('babyshower')" title="Toca para ver muestra Baby Shower Mariel ($50)" style="width:66px; height:136px; flex-shrink:0; border-color:#fbbf24; box-shadow:0 0 16px rgba(251,191,36,0.45);">
             <img id="thumbMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" loading="lazy" />
           </div>
-          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('roblox')" title="Toca para ver muestra Infantil Roblox Ricardo ($50)" style="width:72px; height:136px; border-color:#ef4444; box-shadow:0 0 16px rgba(239,68,68,0.45);">
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('roblox')" title="Toca para ver muestra Infantil Roblox Ricardo ($50)" style="width:66px; height:136px; flex-shrink:0; border-color:#ef4444; box-shadow:0 0 16px rgba(239,68,68,0.45);">
             <img id="thumbMuestra50Roblox" src="ejemplo-50-roblox.jpg" alt="Muestra Invitación $50 Infantil Roblox" loading="lazy" />
+          </div>
+          <div class="mini-phone img-preview-phone" onclick="abrirMuestraImagen('ranita')" title="Toca para ver muestra Infantil Ranita Ali Sebastián ($50)" style="width:66px; height:136px; flex-shrink:0; border-color:#22c55e; box-shadow:0 0 16px rgba(34,197,94,0.45);">
+            <img id="thumbMuestra50Ranita" src="ejemplo-50-ranita.jpg" alt="Muestra Invitación $50 Infantil Ranita Ali Sebastián" loading="lazy" />
           </div>
         </div>
 
@@ -1143,11 +1146,15 @@
         <button type="button" id="tab50Roblox" class="sample-tab-btn" onclick="cambiarMuestra50('roblox')">
           🎮 Roblox Infantil
         </button>
+        <button type="button" id="tab50Ranita" class="sample-tab-btn" onclick="cambiarMuestra50('ranita')">
+          🐸 Ranita Ali Sebastián
+        </button>
       </div>
       <img id="fullMuestra50" src="ejemplo-50.jpg" alt="Muestra Invitación $50 Brianna K-Pop Demon Hunters" />
       <img id="fullMuestra50Ximena" src="ejemplo-50-ximena.jpg" alt="Muestra Invitación $50 XV Ximena Sin Botones" style="display:none; border-color:rgba(96, 165, 250, 0.75); box-shadow:0 0 35px rgba(59, 130, 246, 0.5);" />
       <img id="fullMuestra50BabyShower" src="ejemplo-50-babyshower.jpg" alt="Muestra Invitación $50 Baby Shower Mariel" style="display:none; border-color:rgba(251, 191, 36, 0.75); box-shadow:0 0 35px rgba(245, 158, 11, 0.5);" />
       <img id="fullMuestra50Roblox" src="ejemplo-50-roblox.jpg" alt="Muestra Invitación $50 Infantil Roblox Ricardo Javier" style="display:none; border-color:rgba(239, 68, 68, 0.75); box-shadow:0 0 35px rgba(239, 68, 68, 0.5);" />
+      <img id="fullMuestra50Ranita" src="ejemplo-50-ranita.jpg" alt="Muestra Invitación $50 Infantil Ranita Ali Sebastián" style="display:none; border-color:rgba(34, 197, 94, 0.75); box-shadow:0 0 35px rgba(34, 197, 94, 0.5);" />
       <div style="display:flex; gap:10px; width:100%;">
         <a href="https://wa.me/526623355306?text=Hola,%20vi%20las%20muestras%20de%20$50%20y%20me%20interesa%20el%20paquete%20de%20Invitaci%C3%B3n%20Normal%20Personalizada" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-whatsapp-order" style="flex:1;">
           💬 Pedir por WhatsApp ($50)
@@ -1231,20 +1238,24 @@
       const imgXimena = document.getElementById('fullMuestra50Ximena');
       const imgBabyShower = document.getElementById('fullMuestra50BabyShower');
       const imgRoblox = document.getElementById('fullMuestra50Roblox');
+      const imgRanita = document.getElementById('fullMuestra50Ranita');
       const tabBrianna = document.getElementById('tab50Brianna');
       const tabXimena = document.getElementById('tab50Ximena');
       const tabBabyShower = document.getElementById('tab50BabyShower');
       const tabRoblox = document.getElementById('tab50Roblox');
+      const tabRanita = document.getElementById('tab50Ranita');
 
       imgBrianna.style.display = 'none';
       imgXimena.style.display = 'none';
       if (imgBabyShower) imgBabyShower.style.display = 'none';
       if (imgRoblox) imgRoblox.style.display = 'none';
+      if (imgRanita) imgRanita.style.display = 'none';
 
       tabBrianna.classList.remove('active');
       tabXimena.classList.remove('active');
       if (tabBabyShower) tabBabyShower.classList.remove('active');
       if (tabRoblox) tabRoblox.classList.remove('active');
+      if (tabRanita) tabRanita.classList.remove('active');
 
       if (cual === 'ximena') {
         imgXimena.style.display = 'block';
@@ -1255,6 +1266,9 @@
       } else if (cual === 'roblox') {
         if (imgRoblox) imgRoblox.style.display = 'block';
         if (tabRoblox) tabRoblox.classList.add('active');
+      } else if (cual === 'ranita') {
+        if (imgRanita) imgRanita.style.display = 'block';
+        if (tabRanita) tabRanita.classList.add('active');
       } else {
         imgBrianna.style.display = 'block';
         tabBrianna.classList.add('active');
